@@ -17,6 +17,8 @@ Part 1
 - [x] Design on paper
 - [x] Figma design
 - [x] Open Source on github
+- [ ] 8/1? Complete unit tests and one-to-many mapping of project DB
+
 - [ ] DB design
 - [ ] set up plan
 - [ ] Research and determine DB options

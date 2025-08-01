@@ -3,8 +3,9 @@
 - [x] 1 hour Wednesday July 16th 
 - [x] 1 hour Thursday July 17th 
 - [x] 1.5 hours Tuesday July 22nd: Tomcat and Maven for local deployment and index page. Some issues remembered where I had tomcat and maven downloaded, it's in IdeaProjects folder, or I updated the deployment correctly. NOTE to check again. 
-- [ ] 1 hour ~~Friday~~ ~~evening~~ ~~July 18th~~: Database Design and research
+- [x] 1 hour ~~Friday~~ ~~evening~~ ~~July 18th~~: Database Design and research
 - 
-- [ ] 1 hour Weekends DB research and whiteboard logic 
-- [ ] TBD
+- [x] 1 hour Weekends DB research and whiteboard logic 
+- [x] 7/31 1.5 hours - Character DAO test complete and workign as expected, entites completed and mapped to PostgreSQL Supabase, DB updated for better use with game, jakarata updated as well as pom file for acurate use of junit 5 testing and Java 11. 
+- [ ] 8/1? Complete unit tests and one-to-many mapping of project DB 
 
