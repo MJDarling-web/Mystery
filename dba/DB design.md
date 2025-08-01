@@ -7,7 +7,7 @@ story
     created_by_user_id
     created_at
 
-session
+Scene (session)
     id (PK)
     story_id (FK to story.id)
     admin_user_id

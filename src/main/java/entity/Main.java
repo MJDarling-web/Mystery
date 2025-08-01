@@ -5,7 +5,7 @@ import org.hibernate.SessionFactory;
 import persistence.SessionFactoryProvider;
 
 public class Main {
-
+//starts the game, loads clues, characters, and story, tracks game progress and player decisions
     public static void main(String[] args) {
         try {
             SessionFactory sessionFactory = SessionFactoryProvider.getSessionFactory();
