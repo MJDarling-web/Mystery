@@ -17,6 +17,15 @@ public class Clue {
     private String locationFound;
     private boolean isFound;
 
+    public Clue() {}
+
+    public Clue(String description, String image, boolean isFound, String locationFound) {
+        this.description = description;
+        this.image = image;
+        this.isFound = isFound;
+        this.locationFound = locationFound;
+    }
+
     public int getId() {
         return id;
     }
