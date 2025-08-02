@@ -1,40 +1,59 @@
 package persistence;
 
 import entity.Character;
-import org.junit.jupiter.api.*;
-import persistence.GenericDao;
+import entity.Story;
+import entity.User;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class CharacterDaoTest {
 
     private GenericDao<Character> characterDao;
+    private GenericDao<Story> storyDao;
+    private GenericDao<User> userDao;
 
     @BeforeEach
     void setUp() {
         characterDao = new GenericDao<>(Character.class);
+        storyDao = new GenericDao<>(Story.class);
+        userDao = new GenericDao<>(User.class);
     }
 
     @Test
     void insertAndGetCharacter() {
+        // Insert user
+        User user = new User("adminUser", "password123", "admin@example.com", true);
+        int userId = userDao.insert(user);
+
+        // Insert story
+        Story story = new Story("Murder at the Mansion", "A mystery unfolds", "Victorian estate", user);
+        int storyId = storyDao.insert(story);
+
+        // Insert character tied to that story
         Character character = new Character(
                 "Detective Jane",
                 "detective",
-                "At the station",
-                "A veteran with a sharp eye for detail.",
-                false
+                "Skilled investigator with a record of success.",
+                false,
+                "https://example.com/jane.png",
+                story
         );
+        int characterId = characterDao.insert(character);
 
-        int id = characterDao.insert(character);
-        Character retrieved = characterDao.getById(id);
-
+        // Retrieve and verify
+        Character retrieved = characterDao.getById(characterId);
         assertNotNull(retrieved);
         assertEquals("Detective Jane", retrieved.getName());
         assertEquals("detective", retrieved.getRole());
         assertFalse(retrieved.isGuilty());
+        assertEquals("https://example.com/jane.png", retrieved.getPictureUrl());
+        assertEquals(storyId, retrieved.getStory().getId());
 
-        //cleaning up the test after each test:
+        // Clean up
         characterDao.deleteEntity(retrieved);
+        storyDao.deleteEntity(story);
+        userDao.deleteEntity(user);
     }
-
 }

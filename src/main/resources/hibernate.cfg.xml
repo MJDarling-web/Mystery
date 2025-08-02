@@ -34,7 +34,7 @@
         <mapping class="entity.Character"/>
         <mapping class="entity.Clue"/>
         <mapping class="entity.Story"/>
-        <mapping class="entity.Session"/>
+        <mapping class="entity.Scene"/>
 
     </session-factory>
 </hibernate-configuration>
