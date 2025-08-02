@@ -21,9 +21,6 @@ public class Story {
     private String description;
     private String setting;
 
-    @Column(name = "created_at")
-    private Timestamp createdAt;
-
     @ManyToOne
     @JoinColumn(name = "creator_id", nullable = false)
     private User creator;
@@ -54,8 +51,6 @@ public class Story {
     public void setDescription(String description) { this.description = description; }
     public String getSetting() { return setting; }
     public void setSetting(String setting) { this.setting = setting; }
-    public Timestamp getCreatedAt() { return createdAt; }
-    public void setCreatedAt(Timestamp createdAt) { this.createdAt = createdAt; }
     public User getCreator() { return creator; }
     public void setCreator(User creator) { this.creator = creator; }
     public List<Character> getCharacters() { return characters; }

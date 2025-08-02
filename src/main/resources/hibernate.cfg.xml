@@ -31,6 +31,7 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
 
         <!-- Entity mappings -->
+        <mapping class="entity.User"/>
         <mapping class="entity.Character"/>
         <mapping class="entity.Clue"/>
         <mapping class="entity.Story"/>

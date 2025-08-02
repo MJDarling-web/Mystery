@@ -2,7 +2,7 @@ package entity;
 
 import jakarta.persistence.*;
 import jakarta.persistence.Entity;
-import jdk.jfr.Timestamp;
+import java.sql.Timestamp;
 
 /**
  * Entity to CRUD scene for the story

@@ -41,7 +41,6 @@ class StoryDaoTest {
         assertEquals("Murder at a Mansion", retrieved.getTitle());
         assertEquals("A ghostly haunted mansion in Salsburg, Virginia two days before Christmas.", retrieved.getDescription());
         assertEquals("Winter", retrieved.getSetting());
-        assertNotNull(retrieved.getCreatedAt());
         assertEquals(userId, retrieved.getCreator().getId());
 
         // Clean up
