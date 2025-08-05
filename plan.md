@@ -17,7 +17,11 @@ Part 1
 - [x] Design on paper
 - [x] Figma design
 - [x] Open Source on github
-- [ ] 8/1? Complete unit tests and one-to-many mapping of project DB
+- [x] 8/1? Complete unit tests and one-to-many mapping of project DB
+- [ ] admin facing pages for creating the characters, story, 
+- [ ] Create a clean.db for use of testing and then either a primary database or new columns for testing this db so I don't delete MM data when testing in the future.
+- [ ] Creating of user facing interactive webpages for game
+- Admin creds through AWS and pages for story character creation through website.
 
 - [ ] DB design
 - [ ] set up plan
@@ -28,6 +32,7 @@ Part 1
 - [ ] tests
 - [ ] project run through
 - [ ] share with party 
+
 - [ ]
 
 Part 2
