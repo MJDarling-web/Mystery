@@ -43,11 +43,21 @@ __[x] Monday, August 11th__
 * Transfer hand drawn admin UI pages to figma
 
 
-__[ ] Tuesday, August 12th__
-* JSP admin and regular pages
-* Servlet admin and regular Pages
-* Navbar
-* 
+__[x] Tuesday, August 12th__
+* [ ] NOT COMPLETE: Create JSP admin pages 
+* [x] ~~Create JSP regular user pages~~
+* [ ] Servlet admin 
+* [x] ~~Servlet regular Pages~~
+~~* Navbar~~
+
+__TODAY, August 11th - 18th week__
+* [ ] build out jsp admin pages
+* [ ] Servlet admin
+* [ ] add html to jsp pages
+* [ ] add css main styles file
+* [ ] style pages according to figma
+* [ ] make navbar more pretty
+
 __[ ] 1st Day of week (Monday?) 2 hours__
 * login credentials aws creation
   __[ ] 2nd Day of week (Wednesday)__
