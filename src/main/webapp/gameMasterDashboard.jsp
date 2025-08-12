@@ -17,6 +17,6 @@ Create a new story
 manage characters, clues ,and scenese for each story
 actionable items: create a new story, view/edit stories, add characters to story, add clues to story, add scense to story
 -->
-
+<%@include file="header.jsp" %>
 </body>
 </html>
