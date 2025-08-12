@@ -9,6 +9,7 @@
 - [x] 7/31 1.5 hours - Character DAO test complete and workign as expected, entites completed and mapped to PostgreSQL Supabase, DB updated for better use with game, jakarata updated as well as pom file for acurate use of junit 5 testing and Java 11. 
 - [x] 30 minutes 8/2 Complete unit tests and one-to-many mapping of project DB 
 - [x] 2.5 hours 8/2 Fixed DaoTests to pass and delete data after adding then retrieving data from postgreSQL database
+- [x] 1 hour 8/11 on front end of admin dashboard UI in figma
 - [ ] next need to create a clean.db for use of testing and then either a primary database or new columns for testing this db so I don't delete MM data when testing in the future. 
 - Creating of user facing interactive webpages for game 
 - Admin creds through AWS and pages for story character creation through website.

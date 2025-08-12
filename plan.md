@@ -23,17 +23,38 @@ Part 1
 - [ ] Creating of user facing interactive webpages for game
 - Admin creds through AWS and pages for story character creation through website.
 
-- [ ] DB design
+- [x] DB design
 - [ ] set up plan
-- [ ] Research and determine DB options
+- 
+- [x] Research and determine DB options
 - [ ] whiteboard logic 
 - [ ] pseudocode
-- [ ] Environment set up?
-- [ ] tests
+- [x] Environment set up?
+- [x] tests
 - [ ] project run through
 - [ ] share with party 
-
 - [ ]
+
+## Weekly plan ## 
+__[x] Friday, August 8th__
+* plan for next week
+
+__[x] Monday, August 11th__
+* Transfer hand drawn admin UI pages to figma
+
+
+__[ ] Tuesday, August 12th__
+* JSP admin and regular pages
+* Servlet admin and regular Pages
+* Navbar
+* 
+__[ ] 1st Day of week (Monday?) 2 hours__
+* login credentials aws creation
+  __[ ] 2nd Day of week (Wednesday)__
+__[ ] 3rd Day of Week (Thursday)__
+__[ ] Friday, August 15th__
+* schedule plan for the next week
+__[ ] Saturday Morning__
 
 Part 2
 - [ ] incorporate AI story generation 
