@@ -11,6 +11,7 @@
 - [x] 2.5 hours 8/2 Fixed DaoTests to pass and delete data after adding then retrieving data from postgreSQL database
 - [x] 1 hour 8/11 on front end of admin dashboard UI in figma
 - [x] 1 hour on servlet mapping, pom file for javax, jsp pages and navbar
+- [x] 1 hour index page navigation and navbar styled to liking 
 - [ ] next need to create a clean.db for use of testing and then either a primary database or new columns for testing this db so I don't delete MM data when testing in the future. 
 - Creating of user facing interactive webpages for game 
 - Admin creds through AWS and pages for story character creation through website.

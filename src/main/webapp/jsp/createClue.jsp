@@ -9,10 +9,12 @@
 <html>
 <head>
     <title>Title</title>
-  <!--
-    New clues to add to the database for specific story, should include:
-    Desc, story ID selection, image to forward to Imgur and hosted, title of item, location found, is found of boolean.
-  -->
+    <link rel="stylesheet" href="style/main.css" type="text/css" />
+
+    <!--
+      New clues to add to the database for specific story, should include:
+      Desc, story ID selection, image to forward to Imgur and hosted, title of item, location found, is found of boolean.
+    -->
 </head>
 <body>
 

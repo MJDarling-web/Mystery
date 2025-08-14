@@ -44,19 +44,21 @@ __[x] Monday, August 11th__
 
 
 __[x] Tuesday, August 12th__
-* [ ] NOT COMPLETE: Create JSP admin pages 
 * [x] ~~Create JSP regular user pages~~
-* [ ] Servlet admin 
 * [x] ~~Servlet regular Pages~~
 ~~* Navbar~~
 
-__TODAY, August 11th - 18th week__
+__[x] Thursday, August 14th__
+* [x] Make index page pretty
+* [ ] Servlets for admin
+* [ ] Create JSP admin pages
+* [ ] build out jsp general user pages
 * [ ] build out jsp admin pages
-* [ ] Servlet admin
-* [ ] add html to jsp pages
-* [ ] add css main styles file
+* [x] add css main styles file
 * [ ] style pages according to figma
-* [ ] make navbar more pretty
+* [x] make navbar more pretty
+
+__TODAY, August 11th - 18th week__
 
 __[ ] 1st Day of week (Monday?) 2 hours__
 * login credentials aws creation

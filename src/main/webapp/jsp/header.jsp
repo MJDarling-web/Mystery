@@ -7,17 +7,36 @@
 --%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!-- Load an icon library to show a hamburger menu (bars) on small screens -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 <%@include file="taglib.jsp" %>
-<div class="topnav" id="myTopnav">
-  <a href="<c:url value='/'/>">Home</a>
-  <a href="<c:url value='/story'/>">Story</a>
-  <a href="<c:url value='/clues'/>">Clues</a>
-  <a href="<c:url value='/characters'/>">Characters</a>
-  <a href="<c:url value='/createStory'/>">Create Story</a>
-  <!-- make light gray unless usser is signed in admin user-->
 
-<!-- make responsive to small screen to have hidden hamburger navbar -->
+<div class="topnav">
+<button type="button" class="icon" aria-expanded="false" aria-controls="myLinks" onclick="toggleMenu(this)">
+  <span class="bar"></span>
+  <span class="bar"></span>
+  <span class="bar"></span>
+  <span class="sr-only">Menu</span>
+</button>
+
+    <div id="myLinks">
+      <a href="<c:url value='/'/>">Home</a>
+      <a href="<c:url value='/story'/>">Story</a>
+      <a href="<c:url value='/clues'/>">Clues</a>
+      <a href="<c:url value='/characters'/>">Characters</a>
+      <a href="<c:url value='/createStory'/>">Create Story</a>
+    </div>
 </div>
+
+  <div style="padding-left:16px">
+    <h3>Title</h3>
+    <p>paragraphy text</p>
+    <p>paragraph text</p>
+  </div>
+
+<script>
+  function toggleMenu(btn) {
+    var panel = document.getElementById("myLinks");
+    var open = getComputedStyle(panel).display !== 'none';
+    panel.style.display = open ? 'none' : 'flex';
+    if (btn) btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+  }
+</script>

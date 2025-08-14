@@ -9,6 +9,8 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="style/main.css" type="text/css" />
+
 </head>
 <body>
 <!-- Should be able to:
