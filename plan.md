@@ -51,14 +51,20 @@ __[x] Tuesday, August 12th__
 __[x] Thursday, August 14th__
 * [x] Make index page pretty
 * [ ] Servlets for admin
-* [ ] Create JSP admin pages
-* [ ] build out jsp general user pages
-* [ ] build out jsp admin pages
+* [ ] JSP admin pages
+* [ ] JSP general user pages
 * [x] add css main styles file
 * [ ] style pages according to figma
 * [x] make navbar more pretty
 
 __TODAY, August 11th - 18th week__
+
+* [ ] Edit and create new story for admin
+* [ ] edit and create new characters for admin
+* [ ] edit and create new clues for admin
+* [ ] edit scenes for new story when it's being created
+* Scenes should be edited with story editing option, 
+* No individual user sign in yet, players can select the correct story and then view all clues found, story progress, and other characters. 
 
 __[ ] 1st Day of week (Monday?) 2 hours__
 * login credentials aws creation
