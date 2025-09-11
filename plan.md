@@ -13,13 +13,13 @@ _What is this project?_ Visit the readme [readme](readme.md) file.
 * Tests
 
 ### What we need for minimal Variable Product
--[ ] Approved project proposal
--[ ] Players can view story details: Story, clues, characters. 
--[ ] Players can add found clues to the clue page to share with everyone by submitting a pin attached to the physical clue.
--[ ] Easy to navigate web app that is aesthetically pleasing
--[ ] Plays can submit a guess at the end
--[ ] Host can CRUD: Story, characters, clues
--[ ] Host can push scenes or have them on a timer
+- [ ] Approved project proposal
+- [ ] Players can view story details: Story, clues, characters. 
+- [ ] Players can add found clues to the clue page to share with everyone by submitting a pin attached to the physical clue.
+- [ ] Easy to navigate web app that is aesthetically pleasing
+- [ ] Plays can submit a guess at the end
+- [ ] Host can CRUD: Story, characters, clues
+- [ ] Host can push scenes or have them on a timer
 
 ### What we need to go the extra mile (or in Part 2)
 * Plays can create their own characters
@@ -28,23 +28,23 @@ _What is this project?_ Visit the readme [readme](readme.md) file.
 
 #### Needed for hosts and players functions
 HOST
--[ ] Finish building out host pages
--[ ] CRUD for host to create and edit "games"
--[ ] Action to post new scenes button for host or timer?
--[ ] Host sign-in through AWS
--[ ] Back buttons? Or a better UI instead of hamburger menu?
--[ ] Readme file with list of tools
--[ ] Plan
--[ ] Deployed on AWS
+- [ ] Finish building out host pages
+- [ ] CRUD for host to create and edit "games"
+- [ ] Action to post new scenes button for host or timer?
+- [ ] Host sign-in through AWS
+- [ ] Back buttons? Or a better UI instead of hamburger menu?
+- [ ] Readme file with list of tools
+- [ ] Plan
+- [ ] Deployed on AWS
 
 
 PLAYERS
--[ ] Player page for game look up with a code
--[ ] Story page to pull from DB by the story ID
--[ ] Clues page to pull from DB by the story ID and a way players can submit found clues
--[ ] Character page to pull from DB by story ID
--[ ] Players submit guess option
--[ ] Scenes to auto update on Story page based on host push of new scene
+- [ ] Player page for game look up with a code
+- [ ] Story page to pull from DB by the story ID
+- [ ] Clues page to pull from DB by the story ID and a way players can submit found clues
+- [ ] Character page to pull from DB by story ID
+- [ ] Players submit guess option
+- [ ] Scenes to auto update on Story page based on host push of new scene
 - [ ] delete admin dashboard on nav for story 
 
 ### Second iteration of this project 
