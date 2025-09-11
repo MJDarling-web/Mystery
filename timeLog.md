@@ -13,6 +13,7 @@
 - [x] 1 hour on servlet mapping, pom file for javax, jsp pages and navbar
 - [x] 1 hour index page navigation and navbar styled to liking 
 - [x] 40 minutes working on admin dashboard and setup of editing servlet pages. 
+- [x] 2 hours working on clean.db and revisiting database, made no progress towards un-clear goal, spent time rehashing project db layout and user focused pages, nothing added forgot to branch off and delete work.
 - [ ] next need to create a clean.db for use of testing and then either a primary database or new columns for testing this db so I don't delete MM data when testing in the future. 
 - Creating of user facing interactive webpages for game 
 - Admin creds through AWS and pages for story character creation through website.

@@ -20,10 +20,8 @@
 <body class="home">
 
 <nav aria-label="Main">
-    <h3><a href="<c:url value='/story'/>">Story</a></h3>
-    <h3><a href="<c:url value='/clues'/>">Clues</a></h3>
-    <h3><a href="<c:url value='/characters'/>">Characters</a></h3>
-    <h3><a href="<c:url value='/adminDashboard'/>">Admin Dashboard</a></h3>
+    <h3><a href="<c:url value='/players'/>">Player Dashboard</a></h3>
+    <h3><a href="<c:url value='/adminDashboard'/>">Host Dashboard</a></h3>
 
 </nav>
 

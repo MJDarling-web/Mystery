@@ -9,6 +9,9 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="style/main.css" type="text/css" />
+    <%@include file="taglib.jsp" %>
+
 </head>
 <body class="home">
 
@@ -16,8 +19,6 @@
   <h3><a href="<c:url value='/story'/>">Story</a></h3>
   <h3><a href="<c:url value='/clues'/>">Clues</a></h3>
   <h3><a href="<c:url value='/characters'/>">Characters</a></h3>
-  <h3><a href="<c:url value='/adminDashboard'/>">Admin Dashboard</a></h3>
-
 </nav>
 
 </body>

@@ -1,10 +1,58 @@
 Started Plan
 # Murder Mystery Plan
+_What is this project?_ Visit the readme [readme](readme.md) file.
+## What we have 
+* Home page 
+* Nav bars
+* Player dashboard
+* Host dashboard
+* DB design
+* Servlets
+* JSP pages
+* Hibernate setup and deployed locally
+* Tests
 
+### What we need for minimal Variable Product
+-[ ] Approved project proposal
+-[ ] Players can view story details: Story, clues, characters. 
+-[ ] Players can add found clues to the clue page to share with everyone by submitting a pin attached to the physical clue.
+-[ ] Easy to navigate web app that is aesthetically pleasing
+-[ ] Plays can submit a guess at the end
+-[ ] Host can CRUD: Story, characters, clues
+-[ ] Host can push scenes or have them on a timer
+
+### What we need to go the extra mile (or in Part 2)
+* Plays can create their own characters
+* Implements and API 
+* Incorporates and  AI (maybe even something like weather to set the scene?)
+
+#### Needed for hosts and players functions
+HOST
+-[ ] Finish building out host pages
+-[ ] CRUD for host to create and edit "games"
+-[ ] Action to post new scenes button for host or timer?
+-[ ] Host sign-in through AWS
+-[ ] Back buttons? Or a better UI instead of hamburger menu?
+-[ ] Readme file with list of tools
+-[ ] Plan
+-[ ] Deployed on AWS
+
+
+PLAYERS
+-[ ] Player page for game look up with a code
+-[ ] Story page to pull from DB by the story ID
+-[ ] Clues page to pull from DB by the story ID and a way players can submit found clues
+-[ ] Character page to pull from DB by story ID
+-[ ] Players submit guess option
+-[ ] Scenes to auto update on Story page based on host push of new scene
+- [ ] delete admin dashboard on nav for story 
+
+### Second iteration of this project 
+-[ ] Delete admin dsa
+
+ 
 ## Logic needed for the app and things...
-1. _minimum_ admin login for select the story mode and how many players they want in a game?
-2. _nice_ character login so users can be created by players associated with their login. This is where they can create backstory, skills, and other details. Characters are stored in the DB and can be viewed on the characters sheet.
-3. Clues that hold an ID number the users input on the clues page, stored in the database and maintained by the admin.
+
 
 ### page logic
 4. hamburger menu for all pages 
@@ -57,8 +105,7 @@ __[x] Thursday, August 14th__
 * [ ] style pages according to figma
 * [x] make navbar more pretty
 
-__TODAY, August 11th - 18th week__
-
+* [ ] update pages to be Home -> admin login or player, -> game code or go through login and sign in to view stories
 * [ ] Edit and create new story for admin
 * [ ] edit and create new characters for admin
 * [ ] edit and create new clues for admin

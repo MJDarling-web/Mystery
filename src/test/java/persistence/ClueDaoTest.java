@@ -6,6 +6,8 @@ import entity.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.UUID;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class ClueDaoTest {
@@ -23,15 +25,16 @@ class ClueDaoTest {
 
     @Test
     void insertAndGetClue() {
-        // Set up user
-        User user = new User("adminUser", "securePassword", "admin@example.com", true);
+        // Unique user
+        String uname = "adminUser_" + UUID.randomUUID();
+        User user = new User(uname, "securePassword", uname + "@example.com", true);
         int userId = userDao.insert(user);
 
-        // Set up story
+        // Story
         Story story = new Story("Clue in the Kitchen", "A suspicious case near the holidays", "Kitchen", user);
         int storyId = storyDao.insert(story);
 
-        // Set up clue
+        // Clue
         Clue clue = new Clue(
                 "Dull Knife",
                 "A knife with a slight red tint near the handle.",
@@ -42,7 +45,7 @@ class ClueDaoTest {
         );
         int clueId = clueDao.insert(clue);
 
-        // Retrieve and validate
+        // Verify
         Clue retrieved = clueDao.getById(clueId);
         assertNotNull(retrieved);
         assertEquals("Dull Knife", retrieved.getTitle());

@@ -6,7 +6,7 @@ import entity.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.sql.Timestamp;
+import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -25,15 +25,16 @@ class SceneDaoTest {
 
     @Test
     void insertAndGetScene() {
-        // Create and insert user
-        User user = new User("adminUser", "password123", "admin@example.com", true);
+        // Unique user
+        String uname = "adminUser_" + UUID.randomUUID();
+        User user = new User(uname, "password123", uname + "@example.com", true);
         int userId = userDao.insert(user);
 
-        // Create and insert story
+        // Story
         Story story = new Story("The Final Hour", "Climactic confrontation", "Rooftop", user);
         int storyId = storyDao.insert(story);
 
-        // Create and insert scene
+        // Scene
         Scene scene = new Scene();
         scene.setTitle("Showdown");
         scene.setDescription("The detective confronts the suspect.");

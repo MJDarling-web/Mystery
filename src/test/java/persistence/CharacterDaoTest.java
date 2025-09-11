@@ -6,6 +6,8 @@ import entity.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.UUID;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CharacterDaoTest {
@@ -23,15 +25,16 @@ class CharacterDaoTest {
 
     @Test
     void insertAndGetCharacter() {
-        // Insert user
-        User user = new User("adminUser", "password123", "admin@example.com", true);
+        // Unique user
+        String uname = "adminUser_" + UUID.randomUUID();
+        User user = new User(uname, "password123", uname + "@example.com", true);
         int userId = userDao.insert(user);
 
-        // Insert story
+        // Story
         Story story = new Story("Murder at the Mansion", "A mystery unfolds", "Victorian estate", user);
         int storyId = storyDao.insert(story);
 
-        // Insert character tied to that story
+        // Character (attach to story to satisfy NOT NULL story_id)
         Character character = new Character(
                 "Detective Jane",
                 "detective",
@@ -42,7 +45,7 @@ class CharacterDaoTest {
         );
         int characterId = characterDao.insert(character);
 
-        // Retrieve and verify
+        // Verify
         Character retrieved = characterDao.getById(characterId);
         assertNotNull(retrieved);
         assertEquals("Detective Jane", retrieved.getName());

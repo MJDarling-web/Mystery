@@ -4,6 +4,8 @@ import entity.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.UUID;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class UserDaoTest {
@@ -17,15 +19,16 @@ class UserDaoTest {
 
     @Test
     void insertAndGetUser() {
-        User user = new User("testUser", "securePassword", "test@example.com", false);
+        String uname = "testUser_" + UUID.randomUUID();
+        User user = new User(uname, "securePassword", uname + "@example.com", false);
         int userId = userDao.insert(user);
 
         User retrieved = userDao.getById(userId);
 
         assertNotNull(retrieved);
-        assertEquals("testUser", retrieved.getUsername());
+        assertEquals(uname, retrieved.getUsername());
         assertEquals("securePassword", retrieved.getPassword());
-        assertEquals("test@example.com", retrieved.getEmail());
+        assertEquals(uname + "@example.com", retrieved.getEmail());
         assertFalse(retrieved.isAdmin());
         assertEquals(userId, retrieved.getId());
 
