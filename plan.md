@@ -13,13 +13,15 @@ _What is this project?_ Visit the readme [readme](readme.md) file.
 * Tests
 
 ### What we need for minimal Variable Product
+- [ ] Players look up story based on pin. 
 - [ ] Approved project proposal
 - [ ] Players can view story details: Story, clues, characters. 
 - [ ] Players can add found clues to the clue page to share with everyone by submitting a pin attached to the physical clue.
 - [ ] Easy to navigate web app that is aesthetically pleasing
 - [ ] Plays can submit a guess at the end
 - [ ] Host can CRUD: Story, characters, clues
-- [ ] Host can push scenes or have them on a timer
+- [ ] Host can see the "pin" to share with players for game lookup
+- [ ] Host can push scenes or have them on a timer - maybe a timer reminder for the host to get a notification to "push" the next scene?
 
 ### What we need to go the extra mile (or in Part 2)
 * Plays can create their own characters
@@ -45,21 +47,10 @@ PLAYERS
 - [ ] Character page to pull from DB by story ID
 - [ ] Players submit guess option
 - [ ] Scenes to auto update on Story page based on host push of new scene
-- [ ] delete admin dashboard on nav for story 
+- [ ] delete admin dashboard on nav for story
 
-### Second iteration of this project 
--[ ] Delete admin dsa
+_Revisit_ 
 
- 
-## Logic needed for the app and things...
-
-
-### page logic
-4. hamburger menu for all pages 
-5. jsp pages hosting all data for game
-6. Story that is hosted on the story page, with story progression occurring as admin user pushes those updates to the story line for 3 different parts/scenes.
-7. Characters page with some info on each character that can then be clicked on to reveal more details on selected character. Including relation, height, age, and other details related to case. 
-8. 
 Part 1
 - [x] User stories
 - [x] Design on paper
