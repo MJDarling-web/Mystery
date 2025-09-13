@@ -1,5 +1,5 @@
 /**
- * 
+ *
  * PlayersServlet will be the GET
  * reads currentStoryId from session
  * opens a hibernate session using session.get(Story.class, id)

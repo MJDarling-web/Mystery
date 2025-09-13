@@ -14,7 +14,8 @@
 
 </head>
 <body class="home">
-
+<p>Story ID: ${currentStoryId}</p>
+<p>Story Title: ${story.title}</p>
 <nav aria-label="Main">
   <h3><a href="<c:url value='/story'/>">Story</a></h3>
   <h3><a href="<c:url value='/clues'/>">Clues</a></h3>
