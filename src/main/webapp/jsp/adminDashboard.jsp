@@ -14,13 +14,38 @@
 <body>
 <h1 class="game_welcome">Hey there, this is your admin dashboard, eventually it'll first make you login with aws</h1>
 <h3>Review your stories, see all your stories or create a new one for a game</h3>
-<h3><a href="<c:url value='/createStory'/>">View Stories</a></h3>
-<h3>Want to change your characters you've created, check them here at characters</h3>
-<h3><a href="<c:url value='/characters'/>">View Characters</a></h3>
-<h3>Need to update some clues or create new clues, see below</h3>
-<h3><a href="<c:url value='/clues'/>">clues</a></h3>
-<h4>To create a new story simply navigate to View Stories and start a new story, you'll be able to add characters, clues, and modify the scenese as needed. And later you can reuse those clues and characters for other games too!</h4>
-<a href="createCharacters.jsp"></a>
+<!-- list out stories for host to view based on their user login or redirect to login page -->
+
+<c:if test="{$not empty stories}">
+    <table class="left-aligned-table">
+        <thead>
+        <tr>
+            <th>Story ID</th>
+            <th>Title</th>
+            <th>description</th>
+            <th>Setting</th>
+            <th>creator id</th>
+        </tr>
+        </thead>
+        <tbody>
+        <c: forEach var ="storyList" items="${stories}">
+            <tr>
+                <td>${item.id}</td>
+                <td>${item.title}</td>
+                <td>${item.description}</td>
+                <td>${item.setting}</td>
+                <td>${item.created}</td>
+            </tr>
+        </c:>
+        </tbody>
+        <!-- edit/delete button to forward to that stories "final/review" page-->
+    </table>
+</c:if>
+
+<!-- include id, title, description, setting, creator id -->
+<!-- include edit and delete buttons that then take you to the story details page?-->
+
+<h3><a href="<c:url value='/createStory'/>">Create a new story</a></h3>
 
 </body>
 </html>
