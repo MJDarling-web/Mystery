@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet("/adminDashboard")
 public class AdminDashboardServlet extends HttpServlet {
@@ -27,6 +28,11 @@ public class AdminDashboardServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // load all stories and store in a list
+        List<Story> stories = storyDao.getAll();
+        //set attribute for jsp
+        req.setAttribute("stories", stories);
+        //forward to jsp path
         req.getRequestDispatcher("/jsp/adminDashboard.jsp").forward(req, resp);
     }
 
