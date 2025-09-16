@@ -13,7 +13,7 @@ _What is this project?_ Visit the readme [readme](readme.md) file.
 * Tests
 
 ### What we need for minimal Variable Product
-- [ ] Players look up story based on pin. 
+- [x] Players look up story based on pin. 
 - [ ] Approved project proposal
 - [ ] Players can view story details: Story, clues, characters. 
 - [ ] Players can add found clues to the clue page to share with everyone by submitting a pin attached to the physical clue.
@@ -30,6 +30,7 @@ _What is this project?_ Visit the readme [readme](readme.md) file.
 
 #### Needed for hosts and players functions
 HOST
+- [x] View Host stories
 - [ ] Finish building out host pages
 - [ ] CRUD for host to create and edit "games"
 - [ ] Action to post new scenes button for host or timer?
