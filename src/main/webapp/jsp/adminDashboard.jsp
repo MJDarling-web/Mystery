@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Admin Dashboard</title>
@@ -16,7 +17,7 @@
 <h3>Review your stories, see all your stories or create a new one for a game</h3>
 <!-- list out stories for host to view based on their user login or redirect to login page -->
 
-<c:if test="{$not empty stories}">
+<c:if test="${not empty stories}">
     <table class="left-aligned-table">
         <thead>
         <tr>
@@ -24,19 +25,17 @@
             <th>Title</th>
             <th>description</th>
             <th>Setting</th>
-            <th>creator id</th>
         </tr>
         </thead>
         <tbody>
-        <c: forEach var ="storyList" items="${stories}">
+        <c:forEach var ="item" items="${stories}">
             <tr>
                 <td>${item.id}</td>
                 <td>${item.title}</td>
                 <td>${item.description}</td>
                 <td>${item.setting}</td>
-                <td>${item.created}</td>
             </tr>
-        </c:>
+        </c:forEach>
         </tbody>
         <!-- edit/delete button to forward to that stories "final/review" page-->
     </table>
