@@ -73,47 +73,48 @@ Part 1
 - [x] tests
 - [ ] project run through
 - [ ] share with party 
-- [ ]
 
-## Weekly plan ## 
-__[x] Friday, August 8th__
-* plan for next week
+<details>
+<summary>Project Plan</summary>
 
-__[x] Monday, August 11th__
-* Transfer hand drawn admin UI pages to figma
+#### Part 1 
 
+* __[x] Env Set up__
+* __[x] Figma Design__
+* __[x] Hibernate__
+* __[x] Entities__
 
-__[x] Tuesday, August 12th__
+### Next 
+* __[ ] Submit Project Proposal for Paula to review__ due Sunday Sep 21st.
+* __[ ] Review jsp page needs__
+* __[ ] Confirm all classes and entities that are needed are in project or add them__
+
+* __[ ] Revise all jsp and servlet pages__
+
+* __[ ] HTML/CSS code for frontend jsp pages from design__
+* __[ ] Write out Pseudocode on servlets, entities, and jsp pages__
+* __[ ] Javadocs__
+
+* __[ ] JSP and Servlets__
+* __[ ] Cognito login__
+* __[ ] CRUD__
+* __[ ] Tests__
+* __[ ] AWS hosted__
+* __[ ] Presentation__
+
+~~__[x] Tuesday, August 12th__
 * [x] ~~Create JSP regular user pages~~
 * [x] ~~Servlet regular Pages~~
 ~~* Navbar~~
 
 __[x] Thursday, August 14th__
 * [x] Make index page pretty
-* [ ] Servlets for admin
-* [ ] JSP admin pages
-* [ ] JSP general user pages
 * [x] add css main styles file
-* [ ] style pages according to figma
-* [x] make navbar more pretty
+* [x] make navbar more pretty~~
 
-* [ ] update pages to be Home -> admin login or player, -> game code or go through login and sign in to view stories
-* [ ] Edit and create new story for admin
-* [ ] edit and create new characters for admin
-* [ ] edit and create new clues for admin
-* [ ] edit scenes for new story when it's being created
-* Scenes should be edited with story editing option, 
-* No individual user sign in yet, players can select the correct story and then view all clues found, story progress, and other characters. 
-
-__[ ] 1st Day of week (Monday?) 2 hours__
-* login credentials aws creation
-  __[ ] 2nd Day of week (Wednesday)__
-__[ ] 3rd Day of Week (Thursday)__
-__[ ] Friday, August 15th__
-* schedule plan for the next week
-__[ ] Saturday Morning__
 
 Part 2
 - [ ] incorporate AI story generation 
 - [ ] user login to modify and create characters 
 
+</details>
