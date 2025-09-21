@@ -55,6 +55,6 @@ A murder mystery web app for all to use, where players can view the story, chara
 
 #### Page Designs - Host Pages 
 
-![Admin Host pages](/DesignDocs/Host Pages.png)
+![Admin Host pages](/DesignDocs/Host-Pages.png)
 #### Page Designs - Player Pages
-![Player pages](/DesignDocs/Player Pages.png)
+![Player pages](/DesignDocs/Player-Pages.png)
