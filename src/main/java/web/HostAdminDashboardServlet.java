@@ -16,8 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/adminDashboard")
-public class AdminDashboardServlet extends HttpServlet {
+@WebServlet("/Host/adminDashboard")
+public class HostAdminDashboardServlet extends HttpServlet {
 
     private GenericDao<Story> storyDao;
 
@@ -33,7 +33,7 @@ public class AdminDashboardServlet extends HttpServlet {
         //set attribute for jsp
         req.setAttribute("stories", stories);
         //forward to jsp path
-        req.getRequestDispatcher("/jsp/adminDashboard.jsp").forward(req, resp);
+        req.getRequestDispatcher("/jsp/Host/adminDashboard").forward(req, resp);
     }
 
 }

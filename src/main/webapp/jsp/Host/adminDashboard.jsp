@@ -5,12 +5,13 @@
   Time: 3:48 PM
   To change this template use File | Settings | File Templates.
 --%>
+<!-- AdminDashboard pulls stores through GET related to host ID servlet used is adminDashboardServlet-->
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Admin Dashboard</title>
-    <%@include file="taglib.jsp" %>
+    <%@include file="../taglib.jsp" %>
 </head>
 <body>
 <h1 class="game_welcome">Hey there, this is your admin dashboard, eventually it'll first make you login with aws</h1>

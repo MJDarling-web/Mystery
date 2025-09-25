@@ -8,14 +8,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Create New Story - Host</title>
     <link rel="stylesheet" href="style/main.css" type="text/css" />
 
 </head>
 <body>
-<!--add a new Character tied to story
-should include in form: name, role, bio, url submission to be forward/hosted on imgur, alibi, relations to murder victim,
-is murdered? Is murdered victim? Is guilty?
+<h1 class="game_welcome"></h1>
+<!---
+Create a new story: including title, desc, and setting
+will use a POST createStoryServlet
 -->
 
 </body>

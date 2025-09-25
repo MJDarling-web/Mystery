@@ -8,12 +8,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Host Create Characters</title>
     <link rel="stylesheet" href="style/main.css" type="text/css" />
 
 </head>
 <body>
-<!-- Scenes for the murder mystery?
-Should include customizable things like scene title, desc, and image url, display order.-->
+<!--add a new Character tied to story
+should include in form: name, role, bio, url submission to be forward/hosted on imgur, alibi, relations to murder victim,
+is murdered? Is murdered victim? Is guilty?
+-->
+
 </body>
 </html>
