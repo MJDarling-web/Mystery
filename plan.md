@@ -14,7 +14,7 @@ _What is this project?_ Visit the readme [readme](readme.md) file.
 ### What we need for minimal Variable Product
 - [x] Players look up story based on pin. 
 - [x] Pages designs & readme
-- [ ] Approved project proposal
+- [X] Approved project proposal
 - [ ] Players can view story details: Story, clues, characters. 
 - [ ] Players can add found clues to the clue page to share with everyone by submitting a pin attached to the physical clue.
 - [ ] Easy to navigate web app that is aesthetically pleasing
@@ -66,20 +66,25 @@ _Revisit_
 
 ### Next 
 * __[x] Submit Project Proposal for Paula to review__ due Sunday Sep 21st.
-* __[ ] Review jsp page needs__
+
+* __[x] Review all jsp and servlet pages__
+* __[9/24] Revise all jsp and servlet pages__
+
+* __[ ] Write out Pseudocode/javadocs on servlets__
+* __[ ] HTML/CSS code for frontend jsp pages from design__
+
 * __[ ] Confirm all classes and entities that are needed are in project or add them__
 
-* __[ ] Revise all jsp and servlet pages__
+* __[ ] Write out Pseudocode on entities__
 
-* __[ ] HTML/CSS code for frontend jsp pages from design__
-* __[ ] Write out Pseudocode on servlets, entities, and jsp pages__
-* __[ ] Javadocs__
-
-* __[ ] JSP and Servlets__
+* __[ ] Review Javadocs__
+* __[ ] Incorporate an AIP or AI generative story prompter?__
 * __[ ] Cognito login__
 * __[ ] CRUD__
 * __[ ] Tests__
+* 
 * __[ ] AWS hosted__
+* 
 * __[ ] Presentation__
 
 ~~__[x] Tuesday, August 12th__

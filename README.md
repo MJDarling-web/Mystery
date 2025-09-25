@@ -53,8 +53,32 @@ A murder mystery web app for all to use, where players can view the story, chara
 8. _A stretch:_ As an uncreative host, I want AI to generate a short story prompt for me and then I can fill in the details and take what I like when creating a new story.
 9. API - As a host I want real time weather while playing the game to be incorporated somehow.
 
-#### Page Designs - Host Pages 
+### Home Page/Index Page
+![Index](/DesignDocs/Home_page.png)
 
-![Admin Host pages](/DesignDocs/Host-Pages.png)
 #### Page Designs - Player Pages
-![Player pages](/DesignDocs/Player-Pages.png)
+![Player game lookup](/DesignDocs/Player_Game_Lookup.png)
+![Player Welcome to game](/DesignDocs/Player_Welcome_To_Game.png)
+![Player Clues Found Enter](/DesignDocs/Player_Submit_Found_Clue.png)
+![Player_Submit_Mystery_Guess.png](DesignDocs/Player_Submit_Mystery_Guess.png)
+![Player_Character_Page.png](DesignDocs/Player_Character_Page.png)
+
+#### Page Designs - Host Pages
+![Host_Login](/DesignDocs/Host_Login.png)
+![Host_Stories](/DesignDocs/Host_AdminDashboard.png)
+![Host_New_Story](/DesignDocs/Host_New_Story.png)
+![Host_Create_Characters](DesignDocs/Host_Create_Characters.png)
+![Host_New_Scenes](DesignDocs/Host_New_Scenes.png)
+![Host_New_Clues](DesignDocs/Host_New_Clues.png)
+![Host_Finished_Edit_Story](DesignDocs/Host_Finished_Edit_Story.png)
+
+
+
+
+
+
+
+
+
+#### Page Designs - Host Pages 
+![Sign in page](/DesignDocs/Host_Login.png)
