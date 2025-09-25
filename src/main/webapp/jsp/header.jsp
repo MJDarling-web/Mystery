@@ -22,7 +22,7 @@
       <a href="<c:url value='/story'/>">Story</a>
       <a href="<c:url value='/clues'/>">Clues</a>
       <a href="<c:url value='/characters'/>">Characters</a>
-      <a href="<c:url value='/adminDashboard'/>">Admin Dashboard</a>
+      <a href="<c:url value='/Host/adminDashboard'/>">Admin Dashboard</a>
 
       <!--<a href="<c:url value='/createStory'/>">Create Story</a>-->
     </div>

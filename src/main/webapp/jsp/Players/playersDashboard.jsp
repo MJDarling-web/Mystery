@@ -8,19 +8,23 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Players Page</title>
+    <title>Players Dashboard</title>
     <link rel="stylesheet" href="style/main.css" type="text/css" />
-    <%@include file="taglib.jsp" %>
+    <%@include file="../taglib.jsp" %>
 
 </head>
 <body class="home">
-<p>Story ID: ${currentStoryId}</p>
-<p>Story Title: ${story.title}</p>
-<nav aria-label="Main">
-  <h3><a href="<c:url value='/story'/>">Story</a></h3>
-  <h3><a href="<c:url value='/clues'/>">Clues</a></h3>
-  <h3><a href="<c:url value='/characters'/>">Characters</a></h3>
-</nav>
+<p><c:out value="${story.title}"/></p>
+<p><c:out value="${story.description}"/></p>
+
+<p>-Scenes-</p>
+<p>Characters</p>
+//characters in cards
+<p>-clues-</p>
+//clues
+
+<button type="submit">Add a clue</button>
+<button type="submit">Add a clue</button>
 
 </body>
 </html>

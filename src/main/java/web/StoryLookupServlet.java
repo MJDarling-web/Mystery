@@ -1,11 +1,3 @@
-/*
-    StoryLookupServlet will be the POST
-    uses existing genericDao<Story> to check the story exists,
-    validate storyID,
-    store only the ID in the session,
-    forwards to /players
-*/
-
 package web;
 
 import entity.Story;
@@ -13,44 +5,56 @@ import persistence.GenericDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 import java.io.IOException;
+import java.util.List;
+import java.util.UUID;
 
-@WebServlet("/storyLookup")
+@WebServlet(urlPatterns = {"/storyLookup"})
 public class StoryLookupServlet extends HttpServlet {
 
     private GenericDao<Story> storyDao;
 
     @Override
     public void init() throws ServletException {
-        storyDao = new GenericDao<>(Story.class);
+        storyDao = new GenericDao<>(Story.class); // adjust to your GenericDao
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/jsp/storyLookup.jsp").forward(req, resp);
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        req.getRequestDispatcher("/jsp/Players/storyLookup.jsp").forward(req, resp);
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setCharacterEncoding("UTF-8");
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
 
-        int id;
-        try {
-            id = Integer.parseInt(req.getParameter("storyId"));
-            if (id <= 0) throw new NumberFormatException();
-        } catch (NumberFormatException e) {
-            req.setAttribute("error", "Please enter a valid story id");
-            req.getRequestDispatcher("/jsp/storyLookup.jsp").forward(req, resp);
+        String gameCode = req.getParameter("gameCode");
+        if (gameCode == null || gameCode.isBlank()) {
+            req.setAttribute("error", "Please enter your party code.");
+            req.getRequestDispatcher("/jsp/Players/storyLookup.jsp").forward(req, resp);
             return;
         }
 
-        // storing the id
-        req.getSession().setAttribute("currentStoryId", id);
+        // Example: lookup by gameCode field
+        List<Story> matches = storyDao.getByPropertyEqual("gameCode", gameCode.trim());
+        if (matches.isEmpty()) {
+            req.setAttribute("error", "No game found for that code.");
+            req.getRequestDispatcher("/jsp/Players/storyLookup.jsp").forward(req, resp);
+            return;
+        }
 
-        //forward to player dashboard servlet
-        resp.sendRedirect(req.getContextPath()  + "/players");
+        Story story = matches.get(0);
+
+        // Session attributes
+        HttpSession session = req.getSession(true);
+        session.setAttribute("currentStoryId", story.getId());      // adjust getter
+        session.setAttribute("gameSessionId", UUID.randomUUID().toString());
+
+        // Optional: if you create a player record here, store playerId too.
+        // session.setAttribute("playerId", player.getId());
+
+        resp.sendRedirect(req.getContextPath() + "/Host/playersDashboard");
     }
 }

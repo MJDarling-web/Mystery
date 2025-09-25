@@ -33,7 +33,7 @@ public class HostAdminDashboardServlet extends HttpServlet {
         //set attribute for jsp
         req.setAttribute("stories", stories);
         //forward to jsp path
-        req.getRequestDispatcher("/jsp/Host/adminDashboard").forward(req, resp);
+        req.getRequestDispatcher("/jsp/Host/adminDashboard.jsp").forward(req, resp);
     }
 
 }
