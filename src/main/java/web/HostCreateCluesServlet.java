@@ -1,10 +1,10 @@
 package web;
 
 import javax.servlet.annotation.WebServlet;
-@WebServlet("Host/hostCreateScenes")
+@WebServlet("/Host/hostCreateClues")
 public class HostCreateCluesServlet extends BaseViewServlet {
     @Override
     protected String view() {
-        return "/jsp/Host/hostCreateScenes.jsp";
+        return "/jsp/Host/hostCreateClues.jsp";
     }
 }

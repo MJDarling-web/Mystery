@@ -1,7 +1,7 @@
 package entity;
 
-import jakarta.persistence.*;
-import jakarta.persistence.Entity;
+import javax.persistence.*;
+import javax.persistence.Entity;
 
 @Entity
 @Table(name = "character")

@@ -1,7 +1,7 @@
 package entity;
 
-import jakarta.persistence.*;
-import jakarta.persistence.Entity;
+import javax.persistence.*;
+import javax.persistence.Entity;
 
 //holds information on evidence players uncover, such as clue description, locationFound, boolean isFound, Character relatedCharacter
 @Entity

@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.UUID;
 
-@WebServlet(urlPatterns = {"/storyLookup"})
+@WebServlet(urlPatterns = {"/Players/storyLookup"})
 public class StoryLookupServlet extends HttpServlet {
 
     private GenericDao<Story> storyDao;
@@ -55,6 +55,6 @@ public class StoryLookupServlet extends HttpServlet {
         // Optional: if you create a player record here, store playerId too.
         // session.setAttribute("playerId", player.getId());
 
-        resp.sendRedirect(req.getContextPath() + "/Host/playersDashboard");
+        resp.sendRedirect(req.getContextPath() + "jsp/Players/playersDashboard");
     }
 }

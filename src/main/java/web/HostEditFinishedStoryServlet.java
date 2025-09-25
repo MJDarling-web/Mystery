@@ -1,7 +1,7 @@
 package web;
 
 import javax.servlet.annotation.WebServlet;
-@WebServlet("Host/hostEditFinishedStory")
+@WebServlet("/Host/hostEditFinishedStory")
 public class HostEditFinishedStoryServlet extends BaseViewServlet {
     @Override
     protected String view() {

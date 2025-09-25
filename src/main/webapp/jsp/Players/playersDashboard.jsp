@@ -18,7 +18,8 @@
 <p><c:out value="${story.description}"/></p>
 
 <p>-Scenes-</p>
-<p>Characters</p>
+//Scenes in cards
+<p>-Characters-</p>
 //characters in cards
 <p>-clues-</p>
 //clues

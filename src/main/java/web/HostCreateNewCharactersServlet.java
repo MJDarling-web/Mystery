@@ -2,7 +2,7 @@ package web;
 
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("Host/hostCreateCharacters")
+@WebServlet("/Host/hostCreateCharacters")
 public class HostCreateNewCharactersServlet extends BaseViewServlet {
     @Override
     protected String view() {

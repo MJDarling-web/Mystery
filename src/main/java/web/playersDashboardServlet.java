@@ -15,7 +15,7 @@ import javax.servlet.http.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(urlPatterns = {"/playersDashboard"})
+@WebServlet(urlPatterns = {"/Players/playersDashboard"})
 public class playersDashboardServlet extends HttpServlet {
 
     @Override
@@ -42,12 +42,11 @@ public class playersDashboardServlet extends HttpServlet {
             Hibernate.initialize(story.getScenes());      // List<Scene>
             Hibernate.initialize(story.getCharacters());  // List<Character>
 
-            // Example: all clues for this story. Replace with “found clues for player” if you track that.
-            @SuppressWarnings("unchecked")
+            //query clues
             List<Clue> foundClues = session.createQuery(
-                            "from Clue c where c.story.id = :sid order by c.id asc")
+                            "from Clue c where c.story.id = :sid order by c.id asc", Clue.class)
                     .setParameter("sid", storyId)
-                    .list();
+                    .getResultList();
 
             req.setAttribute("story", story);
             req.setAttribute("unlockedScenes", story.getScenes());

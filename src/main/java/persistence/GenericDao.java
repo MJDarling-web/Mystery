@@ -1,9 +1,9 @@
 package persistence;
 
-import jakarta.persistence.criteria.CriteriaBuilder;
-import jakarta.persistence.criteria.CriteriaQuery;
-import jakarta.persistence.criteria.Expression;
-import jakarta.persistence.criteria.Root;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Expression;
+import javax.persistence.criteria.Root;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
@@ -80,7 +80,7 @@ public class GenericDao<T> {
     public void update(T entity) {
         Session session = getSession();
         Transaction transaction = session.beginTransaction();
-        session.update(entity);  // Merge is used for update and insert if the entity is detached
+        session.merge(entity);  // Merge is used for update and insert if the entity is detached
         transaction.commit();
         session.close();
     }
@@ -128,12 +128,12 @@ public class GenericDao<T> {
      */
     public List<T> getByPropertyLike(String propertyName, String value) {
         try (Session session = getSession()) {
-            CriteriaBuilder builder = session.getCriteriaBuilder();
-            CriteriaQuery<T> query = builder.createQuery(type);
-            Root<T> root = query.from(type);
-            Expression<String> property = root.get(propertyName);
-            query.where(builder.like(property, "%" + value + "%"));
-            return session.createQuery(query).getResultList();
+            CriteriaBuilder cb = (CriteriaBuilder) session.getCriteriaBuilder();
+            CriteriaQuery<T> q = cb.createQuery(type);
+            Root<T> root = q.from(type);
+            Expression<String> prop = root.get(propertyName);
+            q.where(cb.like(prop, "%" + value + "%"));
+            return session.createQuery(q).getResultList();
         }
     }
 
@@ -158,11 +158,11 @@ public class GenericDao<T> {
      */
     public List<T> getByPropertyEqual(String propertyName, Object value) {
         try (Session session = getSession()) {
-            CriteriaBuilder builder = session.getCriteriaBuilder();
-            CriteriaQuery<T> query = builder.createQuery(type);
-            Root<T> root = query.from(type);
-            query.where(builder.equal(root.get(propertyName), value));
-            return session.createQuery(query).getResultList();
+            CriteriaBuilder cb = (CriteriaBuilder) session.getCriteriaBuilder();
+            CriteriaQuery<T> q = cb.createQuery(type);
+            Root<T> root = q.from(type);
+            q.where(cb.equal(root.get(propertyName), value));
+            return session.createQuery(q).getResultList();
         }
     }
 
