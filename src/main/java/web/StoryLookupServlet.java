@@ -17,7 +17,7 @@ public class StoryLookupServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        storyDao = new GenericDao<>(Story.class); // adjust to your GenericDao
+        storyDao = new GenericDao<>(Story.class);
     }
 
     @Override

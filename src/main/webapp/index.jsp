@@ -14,9 +14,10 @@
 <%@include file="jsp/homeHeader.jsp" %>
 
 <nav aria-label="Main">
-    <h3><a href="<c:url value='/storyLookup'/>">I'm a player: Find my party</a></h3>
-    <h3><a href="<c:url value='/players'/>">Player Dashboard</a></h3>
-    <h3><a href="<c:url value='/Host/adminDashboard'/>">Im the Host</a></h3>
+    <h3><a href="<c:url value='/Players/storyLookup'/>">I'm a player: Find my party</a></h3>
+    <!--<h3><a href="<c:url value='/Host/signInSignUp'/>">Im the Host</a></h3>-->
+    <h3><a href="<c:url value='/Host/adminDashboard'/>">Im A Host</a></h3>
+
 </nav>
 
 </body>

@@ -45,7 +45,7 @@
 <!-- include id, title, description, setting, creator id -->
 <!-- include edit and delete buttons that then take you to the story details page?-->
 
-<h3><a href="<c:url value='/createStory'/>">Create a new story</a></h3>
+<h3><a href="<c:url value='/Host/hostCreateNewStory'/>">Create a new story</a></h3>
 
 </body>
 </html>
