@@ -13,11 +13,15 @@
 
 </head>
 <body>
-<h1 class="game_welcome"></h1>
+<h1 class="game_welcome">
+    Create a new story: including title, desc, and setting
+    will use a POST createStoryServlet
+</h1>
 <!---
 Create a new story: including title, desc, and setting
 will use a POST createStoryServlet
 -->
+
 
 </body>
 </html>
