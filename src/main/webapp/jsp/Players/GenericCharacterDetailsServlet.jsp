@@ -22,6 +22,7 @@
 <c:url var="backUrl" value="/players"/>
 <p><a href="${backUrl}">Back to Dashboard</a></p>
 
+<%@include file="/jsp/footer.jsp" %>
 </body>
 </html>
 

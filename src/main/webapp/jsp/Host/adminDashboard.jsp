@@ -47,5 +47,6 @@
 
 <h3><a href="<c:url value='/Host/hostCreateNewStory'/>">Create a new story</a></h3>
 
+<%@include file="/jsp/footer.jsp" %>
 </body>
 </html>

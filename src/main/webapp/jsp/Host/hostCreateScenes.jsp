@@ -15,5 +15,6 @@
 <body>
 <!-- Scenes for the murder mystery?
 Should include customizable things like scene title, desc, and image url, display order.-->
+<%@include file="/jsp/footer.jsp" %>
 </body>
 </html>

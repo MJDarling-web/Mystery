@@ -22,6 +22,6 @@ Create a new story: including title, desc, and setting
 will use a POST createStoryServlet
 -->
 
-
+<%@include file="/jsp/footer.jsp" %>
 </body>
 </html>

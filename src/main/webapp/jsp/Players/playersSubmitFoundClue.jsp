@@ -15,5 +15,6 @@
 
 //button to add a clue and logic for it to be submitted and no longer hidden
 
+<%@include file="/jsp/footer.jsp" %>
 </body>
 </html>

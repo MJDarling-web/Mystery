@@ -15,5 +15,7 @@
 <%@include file="../header.jsp" %>
 <body>
 
+
+<%@include file="/jsp/footer.jsp" %>
 </body>
 </html>

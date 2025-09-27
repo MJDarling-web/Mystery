@@ -18,7 +18,7 @@
   <main aria-label="Main">
     <h2>Submit your game ID to get started</h2>
 
-    <form  action="<c:url value='/storyLookup'/>" method="post">
+    <form  action="<c:url value='/Players/playersDashboard'/>" method="post">
       <label for="storyId">Story ID</label>
       <input type="number" name="storyId" id="storyId" required />
       <input type="submit" value="Submit"/>
@@ -27,5 +27,6 @@
     
   </main>
 
+  <%@include file="/jsp/footer.jsp" %>
 </body>
 </html>

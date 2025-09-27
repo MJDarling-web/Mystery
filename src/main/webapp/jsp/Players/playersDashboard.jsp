@@ -27,5 +27,6 @@
 <button type="submit">Add a clue</button>
 <button type="submit">Add a clue</button>
 
+<%@include file="/jsp/footer.jsp" %>
 </body>
 </html>

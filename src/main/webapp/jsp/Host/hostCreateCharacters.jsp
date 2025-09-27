@@ -18,5 +18,6 @@ should include in form: name, role, bio, url submission to be forward/hosted on 
 is murdered? Is murdered victim? Is guilty?
 -->
 
+<%@include file="/jsp/footer.jsp" %>
 </body>
 </html>

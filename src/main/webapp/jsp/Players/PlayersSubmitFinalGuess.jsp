@@ -16,6 +16,7 @@
 
 //form for player to submit final guess by picking a picture and of the suspects and adding a short blurb why?
 
+<%@include file="/jsp/footer.jsp" %>
 </body>
 </html>
 
