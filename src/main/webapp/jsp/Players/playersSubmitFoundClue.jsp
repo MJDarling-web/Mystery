@@ -9,12 +9,22 @@
 <html>
 <head>
     <title>Found Clue</title>
+    <link rel="stylesheet" href="<c:url value='/style/main.css'/>" type="text/css" />
+
 </head>
+
 <body>
+<%@include file="../taglib.jsp" %>
+
+<main>
+
+
 <h1>Add a found clue</h1>
 
 //button to add a clue and logic for it to be submitted and no longer hidden
 
-<%@include file="/jsp/footer.jsp" %>
+</main>
+
+<%@include file="/jsp/playerFooter.jsp" %>
 </body>
 </html>

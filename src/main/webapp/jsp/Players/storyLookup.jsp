@@ -11,10 +11,12 @@
 <html>
 <head>
     <title>Story Look up</title>
-  <!--<link rel="stylesheet" href="style/main.css" type="text/css" /> -->
+    <link rel="stylesheet" href="<c:url value='/style/main.css'/>" type="text/css" />
 
 </head>
 <body class="home">
+<%@include file="/jsp/header.jsp" %>
+
   <main aria-label="Main">
     <h2>Submit your game ID to get started</h2>
 
@@ -27,6 +29,6 @@
     
   </main>
 
-  <%@include file="/jsp/footer.jsp" %>
+  <%@include file="/jsp/playerFooter.jsp" %>
 </body>
 </html>
