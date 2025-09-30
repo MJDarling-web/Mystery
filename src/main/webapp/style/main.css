@@ -20,15 +20,21 @@ body:not(.home) {
 body.home {
     min-height: 100vh;
     display: flex;
-    flex-direction: column;      /* stack welcome + any home links */
-    justify-content: center;
-    align-items: center;
-    gap: 32px;
-
-    background: url("../images/jr-korpa-BRK_oB5xenk-unsplash.jpg")
-    no-repeat center center fixed;
+    flex-direction: column;
+    background: url("../images/jr-korpa-BRK_oB5xenk-unsplash.jpg") no-repeat center center fixed;
     background-size: cover;
 }
+
+.home-main {
+    flex: 1; /* pushes footer to bottom */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertical centering */
+    align-items: center;     /* horizontal centering */
+    gap: 32px;
+    text-align: center;
+}
+
 
 /* Glowing welcome title */
 @keyframes glowPulse {
@@ -154,5 +160,22 @@ body.home nav a:hover {
 @media (min-width: 900px) {
     /* Keep as dropdown; if you ever want a horizontal menu, you can adapt here */
 }
+footer {
 
+    background-color: #fff;   /* use background-color to avoid image shorthand conflicts */
+    border-top: 1px solid #000;
+    width: 100%;
+    padding: 12px 24px 32px;
+    text-align: left;
+}
+
+footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer li { display: inline-block; margin: 8px; }
+footer a { color: #111; text-decoration: none; }
+footer a:hover {color: #c92626; text-decoration: underline; }
 /* Form styling*/

@@ -14,6 +14,11 @@
 </head>
 <%@include file="header.jsp" %>
 <body>
+<%@include file="/jsp/playerHeader.jsp"%>
+    <main>
 
+    </main>
+
+<%@include file="/jsp/playerFooter.jsp"%>
 </body>
 </html>

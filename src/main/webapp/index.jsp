@@ -5,21 +5,24 @@
 <head>
     <title>Murder Mystery Game</title>
     <link rel="stylesheet" href="style/main.css" type="text/css" />
-
 </head>
+
 <body class="home">
-<div>
-<h1 class="game_welcome">Welcome to the Murder Mystery Game!</h1>
-</div>
-<%@include file="jsp/homeHeader.jsp" %>
+<%@include file="/jsp/header.jsp" %>
 
-<nav aria-label="Main">
-    <h3><a href="<c:url value='/Players/storyLookup'/>">I'm a player: Find my party</a></h3>
-    <!--<h3><a href="<c:url value='/Host/signInSignUp'/>">Im the Host</a></h3>-->
-    <h3><a href="<c:url value='/Host/adminDashboard'/>">Im A Host</a></h3>
+    <main class="home-main">
+        <h1 class="game_welcome">Welcome to the Murder Mystery Game!</h1>
 
-</nav>
+        <%@include file="jsp/homeHeader.jsp" %>
 
-<%@include file="/jsp/footer.jsp" %>
+    <nav aria-label="Main">
+        <h3><a href="<c:url value='/Players/storyLookup'/>">I'm a player: Find my party</a></h3>
+        <h3><a href="<c:url value='/Host/adminDashboard'/>">Im A Host</a></h3>
+    </nav>
+
+
+    </main>
+
+    <%@include file="/jsp/footer.jsp" %>
 </body>
 </html>
