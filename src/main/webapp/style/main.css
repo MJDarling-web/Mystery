@@ -178,6 +178,38 @@ footer ul {
 footer li { display: inline-block; margin: 8px; }
 footer a { color: #111; text-decoration: none; }
 footer a:hover {color: #c92626; text-decoration: underline; }
+.player-footer {
+    background: url("../images/jr-korpa-BRK_oB5xenk-unsplash.jpg") no-repeat center center;
+    background-size: cover;     /* make sure image fills footer */
+    border-top: 1px solid #000;
+    width: 100%;
+    padding: 24px 24px 32px;
+    text-align: center;
+    color: #fff;                /* default text is white */
+}
+
+.player-footer .footer-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.player-footer .footer-links li {
+    display: inline-block;
+    margin: 0 12px;
+}
+
+.player-footer a {
+    color: #fff;                /* links white by default */
+    text-decoration: none;
+    transition: color .2s ease;
+}
+
+.player-footer a:hover {
+    color: #c92626;             /* deep red on hover */
+    text-decoration: underline;
+}
+
 /* Form styling*/
 
 
