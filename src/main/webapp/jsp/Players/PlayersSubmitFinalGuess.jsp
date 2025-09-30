@@ -13,10 +13,10 @@
     <title>Submit Final Guess</title>
     <link rel="stylesheet" href="<c:url value='/style/main.css'/>" type="text/css" />
 </head>
-<body>
+<body class="player-pages">
 <%@include file="/jsp/header.jsp" %>
 
-<main>
+<main class="main-other">
 
 <h1>Submit Final Guess</h1>
 

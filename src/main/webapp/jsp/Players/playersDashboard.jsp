@@ -15,8 +15,9 @@
 
 </head>
 
-<body class="home">
-    <main>
+<body class="player-pages">
+<%@include file="/jsp/header.jsp" %>
+    <main class="main-other">
         <p><c:out value="${story.title}"/></p>
         <p><c:out value="${story.description}"/></p>
 

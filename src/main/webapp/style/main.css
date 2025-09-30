@@ -11,7 +11,7 @@ body {
 }
 
 body:not(.home) {
-    padding-top: 64px; /* bar is 56px tall; 64 gives breathing room */
+    padding-top: 64px;
 }
 
 .sr-only { position: absolute; left: -9999px; }
@@ -26,6 +26,25 @@ body.home {
 }
 
 .home-main {
+    flex: 1; /* pushes footer to bottom */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertical centering */
+    align-items: center;     /* horizontal centering */
+    gap: 32px;
+    text-align: center;
+}
+
+/* HOME PAGE ONLY */
+body.player-pages {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    background-size: cover;
+}
+
+.main-other {
     flex: 1; /* pushes footer to bottom */
     display: flex;
     flex-direction: column;

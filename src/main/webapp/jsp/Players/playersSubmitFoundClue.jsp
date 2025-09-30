@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="../taglib.jsp" %>
+
 <html>
 <head>
     <title>Found Clue</title>
@@ -13,10 +15,9 @@
 
 </head>
 
-<body>
-<%@include file="../taglib.jsp" %>
+<body class="player-pages">
 
-<main>
+<main class="main-other">
 
 
 <h1>Add a found clue</h1>

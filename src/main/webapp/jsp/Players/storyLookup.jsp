@@ -14,10 +14,10 @@
     <link rel="stylesheet" href="<c:url value='/style/main.css'/>" type="text/css" />
 
 </head>
-<body class="home">
+<body class="player-pages">
 <%@include file="/jsp/header.jsp" %>
 
-  <main aria-label="Main">
+  <main class="main-other">
     <h2>Submit your game ID to get started</h2>
 
     <form  action="<c:url value='/Players/playersDashboard'/>" method="post">

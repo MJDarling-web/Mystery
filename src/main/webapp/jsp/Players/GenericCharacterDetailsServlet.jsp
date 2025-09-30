@@ -9,9 +9,13 @@
 <%@ include file="/jsp/taglib.jsp" %>
 <!DOCTYPE html>
 <html>
-<head><title>Character Details</title></head>
-<body>
+<head>
+  <title>Character Details</title>
+  <link rel="stylesheet" href="<c:url value='/style/main.css'/>" type="text/css" />
+</head>
+<body class="player-pages">
 
+<main class="main-other">
 <c:if test="${not empty character}">
   <h1><c:out value="${character.name}"/></h1>
   <c:if test="${not empty character.pronouns}"><p>Pronouns: <c:out value="${character.pronouns}"/></p></c:if>
@@ -21,7 +25,7 @@
 
 <c:url var="backUrl" value="/players"/>
 <p><a href="${backUrl}">Back to Dashboard</a></p>
-
+</main>
 <%@include file="/jsp/playerFooter.jsp" %>
 </body>
 </html>

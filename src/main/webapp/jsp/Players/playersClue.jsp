@@ -14,10 +14,10 @@
     <link rel="stylesheet" href="<c:url value='/style/main.css'/>" type="text/css" />
 
 </head>
-<%@include file="../header.jsp" %>
-<body>
+<%@include file="/jsp/header.jsp" %>
+<body class="player-pages">
 
-    <main>
+    <main class="main-other">
 
     </main>
 
