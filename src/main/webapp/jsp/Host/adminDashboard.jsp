@@ -7,17 +7,15 @@
 --%>
 <!-- AdminDashboard pulls stores through GET related to host ID servlet used is adminDashboardServlet-->
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>
+<%@include file="../taglib.jsp" %>
 <html>
 <head>
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="<c:url value='/style/main.css'/>" type="text/css" />
-
-    <%@include file="../taglib.jsp" %>
 </head>
 
 <body>
-    <%@include file="/jsp/header.jsp" %>
+    <%@include file="/jsp/hostHeader.jsp" %>
 
 <main class="user-pages">
 

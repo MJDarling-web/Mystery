@@ -229,6 +229,49 @@ footer a:hover {color: #c92626; text-decoration: underline; }
     text-decoration: underline;
 }
 
+/** Host header styling */
+.host-header {
+    top: 0; left: 0; right: 0;
+    height: 15vh;
+    background: url("../images/jr-korpa-BRK_oB5xenk-unsplash.jpg");
+    background-size: cover;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    position: fixed;
+}
+
+.host-header .left {
+    display: flex;
+    gap: 12px;
+}
+
+.host-header h2 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
+
+.host-header .btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #555;
+    transition: background 0.4s, color 0.4s;
+}
+
+.host-header .btn:hover {
+    background: #555;
+    color: #c92626;
+}
+
 /* Form styling*/
 
 
