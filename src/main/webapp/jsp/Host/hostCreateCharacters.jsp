@@ -6,17 +6,19 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="../taglib.jsp" %>
 <html>
 <head>
     <title>Host Create Characters</title>
-    <link rel="stylesheet" href="style/main.css" type="text/css" />
-
+    <link rel="stylesheet" href="<c:url value='/style/main.css'/>" type="text/css" />
 </head>
+
 <body>
-<!--add a new Character tied to story
-should include in form: name, role, bio, url submission to be forward/hosted on imgur, alibi, relations to murder victim,
-is murdered? Is murdered victim? Is guilty?
--->
+    <%@include file="/jsp/hostHeader.jsp" %>
+
+    <main>
+
+    </main>
 
 <%@include file="/jsp/footer.jsp" %>
 </body>

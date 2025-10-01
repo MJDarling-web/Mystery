@@ -11,7 +11,7 @@ body {
 }
 
 body:not(.home) {
-    padding-top: 64px; /* bar is 56px tall; 64 gives breathing room */
+    padding-top: 64px;
 }
 
 .sr-only { position: absolute; left: -9999px; }
@@ -20,15 +20,40 @@ body:not(.home) {
 body.home {
     min-height: 100vh;
     display: flex;
-    flex-direction: column;      /* stack welcome + any home links */
-    justify-content: center;
-    align-items: center;
-    gap: 32px;
-
-    background: url("../images/jr-korpa-BRK_oB5xenk-unsplash.jpg")
-    no-repeat center center fixed;
+    flex-direction: column;
+    background: url("../images/jr-korpa-BRK_oB5xenk-unsplash.jpg") no-repeat center center fixed;
     background-size: cover;
 }
+
+.home-main {
+    flex: 1; /* pushes footer to bottom */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertical centering */
+    align-items: center;     /* horizontal centering */
+    gap: 32px;
+    text-align: center;
+}
+
+/* HOME PAGE ONLY */
+body.player-pages {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    background-size: cover;
+}
+
+.main-other {
+    flex: 1; /* pushes footer to bottom */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertical centering */
+    align-items: center;     /* horizontal centering */
+    gap: 32px;
+    text-align: center;
+}
+
 
 /* Glowing welcome title */
 @keyframes glowPulse {
@@ -154,5 +179,168 @@ body.home nav a:hover {
 @media (min-width: 900px) {
     /* Keep as dropdown; if you ever want a horizontal menu, you can adapt here */
 }
+footer {
+
+    background-color: #fff;   /* use background-color to avoid image shorthand conflicts */
+    border-top: 1px solid #000;
+    width: 100%;
+    padding: 12px 24px 32px;
+    text-align: left;
+}
+
+footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer li { display: inline-block; margin: 8px; }
+footer a { color: #111; text-decoration: none; }
+footer a:hover {color: #c92626; text-decoration: underline; }
+.player-footer {
+    background: url("../images/jr-korpa-BRK_oB5xenk-unsplash.jpg") no-repeat center center;
+    background-size: cover;     /* make sure image fills footer */
+    border-top: 1px solid #000;
+    width: 100%;
+    padding: 24px 24px 32px;
+    text-align: center;
+    color: #fff;                /* default text is white */
+}
+
+.player-footer .footer-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.player-footer .footer-links li {
+    display: inline-block;
+    margin: 0 12px;
+}
+
+.player-footer a {
+    color: #fff;                /* links white by default */
+    text-decoration: none;
+    transition: color .2s ease;
+}
+
+.player-footer a:hover {
+    color: #c92626;             /* deep red on hover */
+    text-decoration: underline;
+}
+
+/** Host header styling */
+.host-header {
+    top: 0; left: 0; right: 0;
+    height: 15vh;
+    background: url("../images/jr-korpa-BRK_oB5xenk-unsplash.jpg");
+    background-size: cover;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    position: fixed;
+}
+
+.host-header .left {
+    display: flex;
+    gap: 12px;
+}
+
+.host-header h2 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
+
+.host-header .btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #555;
+    transition: background 0.4s, color 0.4s;
+}
+
+.host-header .btn:hover {
+    background: #555;
+    color: #c92626;
+}
+
+/* host pages */
+body.host {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+}
+
+/* keep header from overlapping */
+.page-main {
+    flex: 1;
+    padding: calc(15vh + 16px) 16px 32px; /* 15vh header height */
+}
+
+/* centered page body */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+/* card-style form */
+.story-form-card {
+    display: grid;
+    gap: 14px;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.06);
+}
+
+.story-form-card label {
+    font-size: 14px;
+    color: #333;
+}
+
+.story-form-card input,
+.story-form-card textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d0d0d0;
+    border-radius: 10px;
+    font-size: 16px;
+    background: #fafafa;
+}
+
+.story-form-card input::placeholder,
+.story-form-card textarea::placeholder { color: #9aa0a6; }
+
+.btn-primary {
+    justify-self: end;              /* button to the right */
+    padding: 10px 18px;
+    border: none;
+    border-radius: 10px;
+    background: #111;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform .08s ease, background .2s ease;
+}
+.btn-primary:hover { background: #c92626; }
+.btn-primary:active { transform: translateY(1px); }
+
+/* page heading spacing */
+.page-main h1 {
+    font-size: clamp(24px, 3vw, 36px);
+    margin: 0 0 12px;
+}
 
 /* Form styling*/
+
+
