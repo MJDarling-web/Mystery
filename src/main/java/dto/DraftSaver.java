@@ -1,8 +1,8 @@
 package dto;
 
-import dto.StoryDraft;
+import entity.User;
 
 public interface DraftSaver {
 
-    int save(StoryDraft storyDraft);
+    int save(StoryDraft storyDraft, User creator);
 }
