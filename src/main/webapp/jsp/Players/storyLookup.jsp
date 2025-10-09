@@ -20,7 +20,7 @@
   <main class="main-other">
     <h2>Submit your game ID to get started</h2>
 
-    <form  action="<c:url value='/Players/playersDashboard'/>" method="post">
+    <form  action="<c:url value='/Players/storyLookup'/>" method="post">
       <label for="storyId">Story ID</label>
       <input type="number" name="storyId" id="storyId" required />
       <input type="submit" value="Submit"/>

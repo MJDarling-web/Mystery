@@ -7,10 +7,9 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
-import java.util.List;
 import java.util.UUID;
 
-@WebServlet(urlPatterns = {"/Players/storyLookup"})
+@WebServlet("/Players/storyLookup")
 public class StoryLookupServlet extends HttpServlet {
 
     private GenericDao<Story> storyDao;
@@ -30,31 +29,34 @@ public class StoryLookupServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
-        String gameCode = req.getParameter("gameCode");
-        if (gameCode == null || gameCode.isBlank()) {
-            req.setAttribute("error", "Please enter your party code.");
+        String storyIdStr = req.getParameter("storyId");
+        if (storyIdStr == null || storyIdStr.isBlank()) {
+            req.setAttribute("error", "Please enter a story ID.");
             req.getRequestDispatcher("/jsp/Players/storyLookup.jsp").forward(req, resp);
             return;
         }
 
-        // Example: lookup by gameCode field
-        List<Story> matches = storyDao.getByPropertyEqual("gameCode", gameCode.trim());
-        if (matches.isEmpty()) {
-            req.setAttribute("error", "No game found for that code.");
+        int storyId;
+        try {
+            storyId = Integer.parseInt(storyIdStr.trim());
+        } catch (NumberFormatException e) {
+            req.setAttribute("error", "Story ID must be a number.");
             req.getRequestDispatcher("/jsp/Players/storyLookup.jsp").forward(req, resp);
             return;
         }
 
-        Story story = matches.get(0);
+        Story story = storyDao.getById(storyId);
+        if (story == null) {
+            req.setAttribute("error", "No story found for that ID.");
+            req.getRequestDispatcher("/jsp/Players/storyLookup.jsp").forward(req, resp);
+            return;
+        }
 
-        // Session attributes
         HttpSession session = req.getSession(true);
-        session.setAttribute("currentStoryId", story.getId());      // adjust getter
+        session.setAttribute("currentStoryId", story.getId());
         session.setAttribute("gameSessionId", UUID.randomUUID().toString());
 
-        // Optional: if you create a player record here, store playerId too.
-        // session.setAttribute("playerId", player.getId());
-
-        resp.sendRedirect(req.getContextPath() + "jsp/Players/playersDashboard");
+        // Redirect to a servlet (recommended), not directly to a JSP:
+        resp.sendRedirect(req.getContextPath() + "/Players/playersDashboard");
     }
 }
