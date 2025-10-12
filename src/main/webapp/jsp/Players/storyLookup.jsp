@@ -22,9 +22,8 @@
 
     <form  action="<c:url value='/Players/storyLookup'/>" method="post">
       <label for="storyId">Story ID</label>
-      <input type="number" name="storyId" id="storyId" required />
-      <input type="submit" value="Submit"/>
-      <button type="submit">Let's start playing!</button>
+      <input type="number" name="storyId" id="storyId" required/>
+      <input type="submit" value="Let's Start Playing!"/>
     </form>
     
   </main>
