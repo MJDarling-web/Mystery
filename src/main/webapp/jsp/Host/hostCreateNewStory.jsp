@@ -20,7 +20,7 @@
     <div class="container">
         <h1>New Story: Part 1/4</h1>
         <!-- Update forwarding to part 2 scene creation and save info in session -->
-        <form class="story-form-card" action="<c:url value='/Host/hostCreateNewStory'/>">
+        <form class="story-form-card" method="post" action="<c:url value='/Host/hostCreateNewStory'/>">
         <label for="title">Title</label>
         <input id="title" name="title" type="text" placeholder="Ex: A Night To Remember" required >
 

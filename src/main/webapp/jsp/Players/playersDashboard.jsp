@@ -31,6 +31,11 @@
         <button type="submit">Add a clue</button>
         <button type="submit">Add a clue</button>
 
+        <form  action="<c:url value='/Players/storyLookup'/>" method="post">
+            <label for="storyId">Story ID</label>
+            <input type="number" name="storyId" id="storyId" required/>
+            <input type="submit" value="Let's Start Playing!"/>
+        </form>
     </main>
 
 <%@include file="/jsp/playerFooter.jsp" %>

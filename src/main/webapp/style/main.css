@@ -271,6 +271,11 @@ footer a:hover {color: #c92626; text-decoration: underline; }
     background: #555;
     color: #c92626;
 }
+.home-header {
+    height: 5vh;
+    background: #fff;
+    border-bottom: 1px solid #000;
+}
 
 /* host pages */
 body.host {

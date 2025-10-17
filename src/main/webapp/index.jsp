@@ -8,7 +8,7 @@
 </head>
 
 <body class="home">
-<%@include file="/jsp/header.jsp" %>
+<%@include file="/jsp/homeHeader.jsp" %>
 
     <main class="home-main">
         <h1 class="game_welcome">Welcome to the Murder Mystery Game!</h1>
