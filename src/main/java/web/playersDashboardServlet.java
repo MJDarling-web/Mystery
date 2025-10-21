@@ -29,8 +29,9 @@ public class playersDashboardServlet extends HttpServlet {
         }
 
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
-        Transaction tx = session.beginTransaction();
-        try {
+        Transaction tx = null;
+        try (session) {
+            tx = session.beginTransaction();
             Story story = session.get(Story.class, storyId);
             if (story == null) {
                 tx.commit();
@@ -55,10 +56,9 @@ public class playersDashboardServlet extends HttpServlet {
 
             tx.commit();
         } catch (Exception e) {
+            assert tx != null;
             tx.rollback();
             throw new ServletException(e);
-        } finally {
-            session.close();
         }
 
         req.getRequestDispatcher("/jsp/Players/playersDashboard.jsp").forward(req, resp);

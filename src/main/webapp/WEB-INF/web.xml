@@ -11,4 +11,8 @@
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
+    <listener>
+        <listener-class>persistence.HibernateLifecycle</listener-class>
+    </listener>
+
 </web-app>

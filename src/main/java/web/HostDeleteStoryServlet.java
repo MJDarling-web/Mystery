@@ -1,9 +1,9 @@
 package web;
 
 import javax.servlet.annotation.WebServlet;
-public class HostDeleteStorySerlvet {
+public class HostDeleteStoryServlet {
     @WebServlet("/Host/hostDeleteStoryServlet ")
-    public static class HostDeleteStoryServlet extends BaseViewServlet {
+    public static class hostDeleteStoryServlet extends BaseViewServlet {
         @Override
         protected String view() {
             return "/jsp/Host/hostDeleteStory.jsp";

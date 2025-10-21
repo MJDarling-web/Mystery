@@ -48,4 +48,15 @@ public class SessionFactoryProvider {
         return sessionFactory;
 
     }
+    public static synchronized void shutdown() {
+        if (sessionFactory != null) {
+            sessionFactory.close(); // Releases pooled DB connections
+            sessionFactory = null;
+        }
+        if (registry != null) {
+            StandardServiceRegistryBuilder.destroy(registry);
+            registry = null;
+        }
+    }
+
 }

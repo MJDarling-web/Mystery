@@ -35,5 +35,4 @@ public class HostAdminDashboardServlet extends HttpServlet {
         //forward to jsp path
         req.getRequestDispatcher("/jsp/Host/adminDashboard.jsp").forward(req, resp);
     }
-
 }
