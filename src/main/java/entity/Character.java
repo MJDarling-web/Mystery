@@ -11,8 +11,9 @@ public class Character {
     private int id;
 
     @Column(name = "picture_url")
+    //TODO pictureUrl import and hosting
     private String pictureUrl;
-
+    //TODO should have character firstname and lastname for character clarity and better use of profile w/ no image.
     private String name;
     private String role;
     private String bio;

@@ -5,16 +5,13 @@
   Time: 4:53 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@include file="../taglib.jsp" %>
+<c:set var="pageTitle" value="Player Dashboard"/>
 
 <html>
-<head>
-    <title>Players Dashboard</title>
-    <link rel="stylesheet" href="<c:url value='/style/main.css'/>" type="text/css" />
-
-</head>
-
+<%@include file="/jsp/head.jsp" %>
 <body class="player-pages">
 <%@include file="/jsp/header.jsp" %>
 
@@ -22,7 +19,7 @@
 
     <!-- Hero title like the mock -->
     <h1 class="player-hero">Welcome to <span><c:out value="${story.title}"/></span></h1>
-    <h3>A live action $murder mystery game</h3>
+    <h1>A live action $murder mystery game</h1>
 
     <!-- STORY DETAILS -->
     <section class="player-section">
@@ -71,7 +68,7 @@
     <!-- CLUES -->
     <section class="player-section">
         <h2 class="section-title">CLUES</h2>
-
+        <p>Submit a found clue below</p>
         <c:choose>
             <c:when test="${not empty foundClues}">
                 <ul class="cards-list">
@@ -83,14 +80,15 @@
                         </li>
                     </c:forEach>
                 </ul>
+
             </c:when>
             <c:otherwise>
                 <p class="muted">No clues yet.</p>
             </c:otherwise>
         </c:choose>
-
-        <div class="center">
-            <a class="btn btn-primary" href="<c:url value='/Players/playersSubmitFoundClue'/>">Add Clue</a>
+            <p>Clues left to find: ${remainingClues}</p>
+        <div class="center mt-3">
+            <a class="btn btn-success" href="<c:url value='/Players/playersSubmitFoundClue'/>">Add Clue</a>
         </div>
     </section>
 
@@ -107,6 +105,10 @@
                             <!-- needs characters initials in the bubble or picture, needs pronouns -->
                             <div class="char-body">
                                 <p><strong>NAME: </strong> <c:out value="${ch.name}"/></p>
+                                <!--Profile Picture-->
+                                <div class="char-avatar">
+                                    <img src="<c:out value='${ch.pictureUrl}'/>" alt="${fn:substring(ch.name, 0, 1)}'s profile picture">
+                                </div>
                                 <p><strong>Bio: </strong> <c:out value="${ch.bio}"/></p>
                                 <p><strong>Role: </strong> <c:out value="${ch.role}"/></p>
                             </div>
@@ -121,10 +123,14 @@
     </section>
 
     <!-- SUBMIT GUESS -->
-    <section class="player-section center">
-        <form action="<c:url value='/Players/PlayersSubmitFinalGuess'/>" method="get">
-            <button class="btn btn-success" type="submit">Submit Guess</button>
-        </form>
+    <!-- shows up once all clues have been found-->
+    <section class="player-section">
+        <h2 class="section-title">Who-done-it</h2>
+        <p>submit your guess, but careful you only get one chance.</p>
+        <br>
+        <div class="center mt-3">
+            <a class="btn btn-danger" href="<c:url value='/Players/PlayersSubmitFinalGuess'/>">Accuse!!!</a>
+        </div>
     </section>
 
 </main>

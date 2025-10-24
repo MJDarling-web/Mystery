@@ -360,7 +360,6 @@ body.host {
 .player-hero {
     text-align: center;
     margin: 1rem 0 2rem;
-    color: #fff;
     font-size: 2rem;
 }
 
@@ -479,7 +478,7 @@ body.host {
     cursor: pointer;
     transition: 0.2s ease;
 }
-
+/*
 .btn-primary {
     background: #007bff;
     color: #fff;
@@ -489,10 +488,12 @@ body.host {
     background: #28a745;
     color: #fff;
 }
-
+*/
 .btn:hover {
     filter: brightness(1.1);
 }
+/** override h3 heading turned white*/
+body.player-pages .player-main h1 { color: #222; }
 
 
 
