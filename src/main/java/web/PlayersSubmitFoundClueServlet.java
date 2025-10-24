@@ -42,9 +42,16 @@ public class PlayersSubmitFoundClueServlet extends HttpServlet {
         }
 
         // TODO: validate/persist the found clue for this story (and player if track)
+        int clueId = Integer.parseInt(req.getParameter("clueCode"));
+        var clueDao = new persistence.GenericDao<>(entity.Clue.class);
+        entity.Clue clue = clueDao.getById(clueId);
 
+        if (clue != null && clue.getStory().getId() == storyId) {
+            clue.setFound(true);
+            clueDao.update(clue);
+        }
         // After success, redirects back to dashboard
-        resp.sendRedirect(req.getContextPath() + "jsp/Players/playersDashboard");
+        resp.sendRedirect(req.getContextPath() + "/Players/playersDashboard");
     }
 }
 
