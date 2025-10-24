@@ -20,7 +20,7 @@
 <main class="main-other">
 <h1>Oh shoot, you found a clue?</h1>
     <form method="post" action="<c:url value='/Players/playersSubmitFoundClue'/>">
-        <input type="tel" placeholder="Enter clue ID" required/>
+        <input type="tel" name="clueCode" placeholder="Enter clue ID" required/>
         <button type="submit">Share CLUE!</button>
     </form>
 </main>
