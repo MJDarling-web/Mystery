@@ -495,5 +495,48 @@ body.host {
 /** override h3 heading turned white*/
 body.player-pages .player-main h1 { color: #222; }
 
+/* === Accuse page specific === */
+.accuse-section {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* reuse your existing grid structure if it looks good */
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    justify-items: center;
+}
+
+/* clickable cards */
+.accuse-section .character-card {
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* image fits nicely */
+.accuse-section .character-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* hover effect */
+.accuse-section .character-card:hover {
+    transform: scale(1.03);
+    border-color: var(--accent-color, #ff4b4b);
+}
+
+/* selected (radio input) effect */
+.accuse-section input[type="radio"]:checked + img,
+.accuse-section input[type="radio"]:checked ~ h5 {
+    border: 2px solid var(--accent-color, #ff4b4b);
+    color: var(--accent-color, #ff4b4b);
+}
+
 
 

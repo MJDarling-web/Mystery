@@ -18,9 +18,32 @@
 
 <main class="main-other">
 
-<h1>Submit Final Guess</h1>
+<h3>Submit Final Guess</h3>
+    <!--TODO should populate with selectable bubbles for each character and player can submit a reason against them-->
+    <!-- Maybe this can be in a form with the player submitting their name? Because there won't be logins for the player at this stage-->
+    <!--div with border here, picture bubble here-->
+    <!--within div the suspects name, for each character in the game-->
+    <!--select option to highlight a character-->
+    <!--Submit button-->
 
-//form for player to submit final guess by picking a picture and of the suspects and adding a short blurb why?
+    <section class="accuse-section">
+        <h4>Select the character you believe is guilty</h4>
+        <c:choose>
+            <c:when test="${not empty characters}">
+                <div class="character-grid">
+                    <c:forEach var="char" items="${characters}">
+                        <label class="character-card">
+                            <input type="radio" name="suspect" value="${char.id}" hidden>
+                            <img src="${char.pictureUrl}" alt="${char.name}" />
+                            <h5>${char.name}</h5>
+                        </label>
+                    </c:forEach>
+                </div>
+            </c:when>
+        </c:choose>
+    </section>
+    <!---->
+    <!---->
 </main>
 
 <%@include file="/jsp/playerFooter.jsp" %>

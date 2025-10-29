@@ -14,7 +14,7 @@ public class PlayersSubmitFinalGuessServlet extends HttpServlet {
 
         Integer storyId = (Integer) req.getSession().getAttribute("currentStoryId");
         if (storyId == null) {
-            resp.sendRedirect(req.getContextPath() + "/story-lookup");
+            resp.sendRedirect(req.getContextPath() + "/storyLookup");
             return;
         }
         req.getRequestDispatcher("/jsp/Players/PlayersSubmitFinalGuess.jsp").forward(req, resp);
@@ -26,7 +26,7 @@ public class PlayersSubmitFinalGuessServlet extends HttpServlet {
 
         Integer storyId = (Integer) req.getSession().getAttribute("currentStoryId");
         if (storyId == null) {
-            resp.sendRedirect(req.getContextPath() + "/story-lookup");
+            resp.sendRedirect(req.getContextPath() + "/storyLookup");
             return;
         }
 

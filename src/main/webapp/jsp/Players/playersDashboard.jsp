@@ -11,6 +11,7 @@
 <c:set var="pageTitle" value="Player Dashboard"/>
 
 <html>
+<!--TODO header should update with game name in it, not just on page-->
 <%@include file="/jsp/head.jsp" %>
 <body class="player-pages">
 <%@include file="/jsp/header.jsp" %>
@@ -93,6 +94,8 @@
     </section>
 
     <!-- CHARACTERS -->
+    <!--TODO each player object needs to be clickable to a player page?-->
+    <!--TODO profile for each picture-->
     <section class="player-section">
         <h2 class="section-title">CHARACTERS</h2>
 
@@ -123,7 +126,8 @@
     </section>
 
     <!-- SUBMIT GUESS -->
-    <!-- shows up once all clues have been found-->
+    <!-- TODO can show up once all clues have been found-->
+    <!--TODO -->
     <section class="player-section">
         <h2 class="section-title">Who-done-it</h2>
         <p>submit your guess, but careful you only get one chance.</p>
