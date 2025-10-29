@@ -496,47 +496,43 @@ body.host {
 body.player-pages .player-main h1 { color: #222; }
 
 /* === Accuse page specific === */
-.accuse-section {
-    text-align: center;
-    margin-top: 2rem;
+.character-card { display:block; cursor:pointer; }
+
+.character-card input {
+    position: absolute;       /* hide but keep it accessible */
+    opacity: 0;
+    pointer-events: none;
 }
 
-/* reuse your existing grid structure if it looks good */
-.character-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 1rem;
-    justify-items: center;
-}
-
-/* clickable cards */
-.accuse-section .character-card {
-    cursor: pointer;
-    transition: transform 0.2s ease, border-color 0.2s ease;
+.card-visual {
     border: 2px solid transparent;
     border-radius: 12px;
-    overflow: hidden;
+    padding: 0.75rem;
+    transition: transform .2s, border-color .2s, box-shadow .2s;
+    background: #fff;          /* optional for contrast */
 }
 
-/* image fits nicely */
-.accuse-section .character-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-}
-
-/* hover effect */
-.accuse-section .character-card:hover {
+.character-card:hover .card-visual {
     transform: scale(1.03);
     border-color: var(--accent-color, #ff4b4b);
 }
 
-/* selected (radio input) effect */
-.accuse-section input[type="radio"]:checked + img,
-.accuse-section input[type="radio"]:checked ~ h5 {
-    border: 2px solid var(--accent-color, #ff4b4b);
-    color: var(--accent-color, #ff4b4b);
+.character-card input:checked + .card-visual {
+    border-color: var(--accent-color, #ff4b4b);
+    box-shadow: 0 0 12px var(--accent-color, #ff4b4b);
 }
 
+.card-visual img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+}
 
-
+/* optional glow */
+@keyframes glowPulse {
+    0%,100% { box-shadow: 0 0 10px var(--accent-color,#ff4b4b); }
+    50%     { box-shadow: 0 0 20px var(--accent-color,#ff4b4b); }
+}
+.character-card input:checked + .card-visual img {
+    animation: glowPulse 1.5s infinite ease-in-out;
+}

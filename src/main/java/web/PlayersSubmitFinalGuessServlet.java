@@ -1,5 +1,7 @@
 package web;
 
+import persistence.SessionFactoryProvider;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
@@ -17,6 +19,20 @@ public class PlayersSubmitFinalGuessServlet extends HttpServlet {
             resp.sendRedirect(req.getContextPath() + "/storyLookup");
             return;
         }
+
+        //load characters per story
+        try (var session = SessionFactoryProvider.getSessionFactory().openSession()) {
+            var tx = session.beginTransaction();
+
+            var characters = session.createQuery(
+                    "select c from entity.Character c where c.story.id = :sid order by c.name",
+                    entity.Character.class
+            ).setParameter("sid", storyId).getResultList();
+
+            tx.commit();
+            req.setAttribute("characters", characters);
+        }
+
         req.getRequestDispatcher("/jsp/Players/PlayersSubmitFinalGuess.jsp").forward(req, resp);
     }
 
@@ -30,8 +46,8 @@ public class PlayersSubmitFinalGuessServlet extends HttpServlet {
             return;
         }
 
-        String guess = req.getParameter("guess");
-        if (guess == null || guess.isBlank()) {
+        String suspectId = req.getParameter("suspect");
+        if (suspectId == null || suspectId.isBlank()) {
             req.setAttribute("error", "Please enter your final guess.");
             req.getRequestDispatcher("/jsp/Players/PlayersSubmitFinalGuess.jsp").forward(req, resp);
             return;
@@ -40,6 +56,6 @@ public class PlayersSubmitFinalGuessServlet extends HttpServlet {
         // TODO: persist the final guess (and associate with player/story)
 
         // After success, redirect back to dashboard
-        resp.sendRedirect(req.getContextPath() + "/jsp/Players/playersDashboard");
+        resp.sendRedirect(req.getContextPath() + "/Players/playersFinalGuessEnteredServlet");
     }
 }
