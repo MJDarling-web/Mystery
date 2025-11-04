@@ -19,7 +19,7 @@
 <main class="main-other">
 
 <h3>Submit Final Guess</h3>
-    <!--TODO should populate with selectable bubbles for each character and player can submit a reason against them-->
+    <!--completed should populate with selectable bubbles for each character and player can submit a reason against them-->
     <!-- Maybe this can be in a form with the player submitting their name? Because there won't be logins for the player at this stage-->
     <!--div with border here, picture bubble here-->
     <!--within div the suspects name, for each character in the game-->

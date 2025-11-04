@@ -55,27 +55,7 @@ body.player-pages {
 }
 
 
-/* Glowing welcome title */
-@keyframes glowPulse {
-    0%, 100% {
-        text-shadow:
-                0 0 6px rgba(255,200,200,.9),
-                0 0 12px rgba(255,80,80,.8),
-                0 0 20px rgba(255,0,0,.6);
-    }
-    50% {
-        text-shadow:
-                0 0 10px rgba(255,230,230,1),
-                0 0 18px rgba(255,100,100,.9),
-                0 0 28px rgba(255,0,0,.7);
-    }
-}
-.game_welcome {
-    color: #c92626;               /* deep crimson */
-    font-style: italic;
-    text-align: center;
-    animation: glowPulse 3s ease-in-out infinite;
-}
+
 /* Home page big, pink links (if you list them on the home screen) */
 body.home nav a {
     color: #f28b82;               /* bloody pink */
@@ -535,4 +515,27 @@ body.player-pages .player-main h1 { color: #222; }
 }
 .character-card input:checked + .card-visual img {
     animation: glowPulse 1.5s infinite ease-in-out;
+}
+
+/* Glowing welcome title */
+.game_welcome {
+    color: #c92626;               /* deep crimson */
+    font-style: italic;
+    text-align: center;
+    animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        text-shadow:
+                0 0 6px rgba(255,200,200,.9),
+                0 0 12px rgba(255,80,80,.8),
+                0 0 20px rgba(255,0,0,.6);
+    }
+    50% {
+        text-shadow:
+                0 0 10px rgba(255,230,230,1),
+                0 0 18px rgba(255,100,100,.9),
+                0 0 28px rgba(255,0,0,.7);
+    }
 }

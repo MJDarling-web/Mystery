@@ -1,11 +1,16 @@
 package web;
 
+import entity.Character;
+import entity.Story;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 import persistence.SessionFactoryProvider;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(urlPatterns = {"/Players/PlayersSubmitFinalGuess"})
 public class PlayersSubmitFinalGuessServlet extends HttpServlet {
@@ -20,14 +25,14 @@ public class PlayersSubmitFinalGuessServlet extends HttpServlet {
             return;
         }
 
-        //load characters per story
-        try (var session = SessionFactoryProvider.getSessionFactory().openSession()) {
-            var tx = session.beginTransaction();
+        try (Session session = SessionFactoryProvider.getSessionFactory().openSession()) {
+            Transaction tx = session.beginTransaction();
 
-            var characters = session.createQuery(
-                    "select c from entity.Character c where c.story.id = :sid order by c.name",
-                    entity.Character.class
-            ).setParameter("sid", storyId).getResultList();
+            List<Character> characters = session.createQuery(
+                            "select c from Character c where c.story.id = :sid order by c.name",
+                            Character.class)
+                    .setParameter("sid", storyId)
+                    .getResultList();
 
             tx.commit();
             req.setAttribute("characters", characters);
@@ -48,14 +53,15 @@ public class PlayersSubmitFinalGuessServlet extends HttpServlet {
 
         String suspectId = req.getParameter("suspect");
         if (suspectId == null || suspectId.isBlank()) {
-            req.setAttribute("error", "Please enter your final guess.");
-            req.getRequestDispatcher("/jsp/Players/PlayersSubmitFinalGuess.jsp").forward(req, resp);
+            req.setAttribute("error", "Please select a suspect.");
+            doGet(req, resp);
             return;
         }
 
-        // TODO: persist the final guess (and associate with player/story)
+        // (Optional) Persist guess + reason here
 
-        // After success, redirect back to dashboard
-        resp.sendRedirect(req.getContextPath() + "/Players/playersFinalGuessEnteredServlet");
+        // Redirect to results page with suspect id
+        resp.sendRedirect(req.getContextPath()
+                + "/Players/playersFinalGuessEntered?suspect=" + suspectId);
     }
 }
