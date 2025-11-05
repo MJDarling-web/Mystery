@@ -24,7 +24,7 @@ public class playersDashboardServlet extends HttpServlet {
 
         Integer storyId = (Integer) req.getSession().getAttribute("currentStoryId");
         if (storyId == null) {
-            resp.sendRedirect(req.getContextPath() + "/story-lookup");
+            resp.sendRedirect(req.getContextPath() + "/storyLookup");
             return;
         }
 
@@ -35,7 +35,7 @@ public class playersDashboardServlet extends HttpServlet {
             Story story = session.get(Story.class, storyId);
             if (story == null) {
                 tx.commit();
-                resp.sendRedirect(req.getContextPath() + "/story-lookup");
+                resp.sendRedirect(req.getContextPath() + "/storyLookup");
                 return;
             }
 
@@ -43,16 +43,24 @@ public class playersDashboardServlet extends HttpServlet {
             Hibernate.initialize(story.getScenes());      // List<Scene>
             Hibernate.initialize(story.getCharacters());  // List<Character>
 
-            //query clues
+            //query clues found
             List<Clue> foundClues = session.createQuery(
-                            "from Clue c where c.story.id = :sid order by c.id asc", Clue.class)
+                    "from Clue c where c.story.id = :sid and c.isFound = true order by c.id asc", Clue.class)
                     .setParameter("sid", storyId)
                     .getResultList();
+
+            //reveals remaining clues needed to be found
+            Long remainingCount = session.createQuery(
+                            "select count(c) from Clue c where c.story.id = :sid and c.isFound = false",
+                            Long.class)
+                    .setParameter("sid", storyId)
+                    .getSingleResult();
 
             req.setAttribute("story", story);
             req.setAttribute("unlockedScenes", story.getScenes());
             req.setAttribute("foundClues", foundClues);
             req.setAttribute("characters", story.getCharacters());
+            req.setAttribute("remainingClues", remainingCount);
 
             tx.commit();
         } catch (Exception e) {

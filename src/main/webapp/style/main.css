@@ -55,27 +55,7 @@ body.player-pages {
 }
 
 
-/* Glowing welcome title */
-@keyframes glowPulse {
-    0%, 100% {
-        text-shadow:
-                0 0 6px rgba(255,200,200,.9),
-                0 0 12px rgba(255,80,80,.8),
-                0 0 20px rgba(255,0,0,.6);
-    }
-    50% {
-        text-shadow:
-                0 0 10px rgba(255,230,230,1),
-                0 0 18px rgba(255,100,100,.9),
-                0 0 28px rgba(255,0,0,.7);
-    }
-}
-.game_welcome {
-    color: #c92626;               /* deep crimson */
-    font-style: italic;
-    text-align: center;
-    animation: glowPulse 3s ease-in-out infinite;
-}
+
 /* Home page big, pink links (if you list them on the home screen) */
 body.home nav a {
     color: #f28b82;               /* bloody pink */
@@ -346,6 +326,216 @@ body.host {
     margin: 0 0 12px;
 }
 
-/* Form styling*/
+/* ------------------------------
+   PLAYER DASHBOARD LAYOUT
+------------------------------ */
 
+.player-main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    color: #222;
+}
 
+.player-hero {
+    text-align: center;
+    margin: 1rem 0 2rem;
+    font-size: 2rem;
+}
+
+.player-hero span {
+    display: inline-block;
+    font-weight: 600;
+}
+
+/* Section headings and layout */
+.player-section {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.section-title {
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.section-intro {
+    max-width: 500px;
+    margin: 0 auto 1rem;
+    color: #555;
+}
+
+.story-details p {
+    text-align: left;
+    margin: 0.3rem 0;
+}
+
+/* ------------------------------
+   CARD LAYOUTS
+------------------------------ */
+
+.cards-list {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+    max-width: 600px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem;
+    background: #fff;
+    text-align: left;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.card-title {
+    margin: 0 0 0.5rem;
+    font-weight: 600;
+}
+
+.muted {
+    color: #777;
+}
+
+/* ------------------------------
+   CHARACTERS GRID
+------------------------------ */
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.character-card {
+    display: flex;
+    align-items: flex-start;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 1rem;
+    background: #fff;
+    text-align: left;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    background: #222;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+
+/* ------------------------------
+   BUTTONS
+------------------------------ */
+
+.center {
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+/*
+.btn-primary {
+    background: #007bff;
+    color: #fff;
+}
+
+.btn-success {
+    background: #28a745;
+    color: #fff;
+}
+*/
+.btn:hover {
+    filter: brightness(1.1);
+}
+/** override h3 heading turned white*/
+body.player-pages .player-main h1 { color: #222; }
+
+/* === Accuse page specific === */
+.character-card { display:block; cursor:pointer; }
+
+.character-card input {
+    position: absolute;       /* hide but keep it accessible */
+    opacity: 0;
+    pointer-events: none;
+}
+
+.card-visual {
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 0.75rem;
+    transition: transform .2s, border-color .2s, box-shadow .2s;
+    background: #fff;          /* optional for contrast */
+}
+
+.character-card:hover .card-visual {
+    transform: scale(1.03);
+    border-color: var(--accent-color, #ff4b4b);
+}
+
+.character-card input:checked + .card-visual {
+    border-color: var(--accent-color, #ff4b4b);
+    box-shadow: 0 0 12px var(--accent-color, #ff4b4b);
+}
+
+.card-visual img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+
+/* optional glow */
+@keyframes glowPulse {
+    0%,100% { box-shadow: 0 0 10px var(--accent-color,#ff4b4b); }
+    50%     { box-shadow: 0 0 20px var(--accent-color,#ff4b4b); }
+}
+.character-card input:checked + .card-visual img {
+    animation: glowPulse 1.5s infinite ease-in-out;
+}
+
+/* Glowing welcome title */
+.game_welcome {
+    color: #c92626;               /* deep crimson */
+    font-style: italic;
+    text-align: center;
+    animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        text-shadow:
+                0 0 6px rgba(255,200,200,.9),
+                0 0 12px rgba(255,80,80,.8),
+                0 0 20px rgba(255,0,0,.6);
+    }
+    50% {
+        text-shadow:
+                0 0 10px rgba(255,230,230,1),
+                0 0 18px rgba(255,100,100,.9),
+                0 0 28px rgba(255,0,0,.7);
+    }
+}

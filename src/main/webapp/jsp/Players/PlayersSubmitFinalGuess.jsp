@@ -18,9 +18,53 @@
 
 <main class="main-other">
 
-<h1>Submit Final Guess</h1>
+<h3>Submit Final Guess</h3>
+    <!--completed should populate with selectable bubbles for each character and player can submit a reason against them-->
+    <!-- Maybe this can be in a form with the player submitting their name? Because there won't be logins for the player at this stage-->
+    <!--div with border here, picture bubble here-->
+    <!--within div the suspects name, for each character in the game-->
+    <!--select option to highlight a character-->
+    <!--Submit button-->
+    <section class="accuse-section">
+        <h4>Select the character you believe is guilty</h4>
 
-//form for player to submit final guess by picking a picture and of the suspects and adding a short blurb why?
+        <c:choose>
+            <c:when test="${not empty characters}">
+                <!-- Wrap in a form so the selected suspect is submitted -->
+                <form method="post" action="<c:url value='/Players/PlayersSubmitFinalGuess'/>">
+
+                    <div class="character-grid">
+                        <c:forEach var="ch" items="${characters}">
+                            <label class="character-card">
+                                <input type="radio" name="suspect" value="${ch.id}">
+                                <div class="card-visual">
+                                    <img src="${ch.pictureUrl}" alt="${ch.name}" />
+                                    <h5>${ch.name}</h5>
+                                </div>
+                            </label>
+                        </c:forEach>
+                    </div>
+
+                    <!-- Reasoning enter -->
+                    <div class="reason-block">
+                        <label for="reason"></label>
+                        <textarea id="reason" name="reason" rows="3" placeholder="Write your raccusation"></textarea>
+                    </div>
+
+                    <!-- Submit button -->
+                    <button type="submit" class="btn-primary">Accuse!</button>
+
+                </form>
+            </c:when>
+
+            <c:otherwise>
+                <p class="muted">No characters available to accuse.</p>
+            </c:otherwise>
+        </c:choose>
+    </section>
+
+    <!---->
+    <!---->
 </main>
 
 <%@include file="/jsp/playerFooter.jsp" %>
