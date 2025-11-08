@@ -41,6 +41,11 @@
                     <td>${item.title}</td>
                     <td>${item.description}</td>
                     <td>${item.setting}</td>
+                    <td>
+                        <a href="${pageContext.request.contextPath}/Host/startEdit?storyId=${item.id}">
+                            Edit
+                        </a>
+                    </td>
                 </tr>
             </c:forEach>
             </tbody>

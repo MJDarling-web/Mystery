@@ -25,7 +25,7 @@ public class CharacterDraft implements Serializable {
     public String getBio() { return bio; }
     public void setBio(String bio) { this.bio = bio; }
 
-    public boolean isGuilty() { return guilty; }
+    public boolean getGuilty() { return guilty; }
     public void setGuilty(boolean guilty) { this.guilty = guilty; }
 
     public boolean isMurdered() { return murdered; }
