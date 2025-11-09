@@ -46,6 +46,12 @@
                             Edit
                         </a>
                     </td>
+                    <td>
+                        <a href="${pageContext.request.contextPath}/Host/deleteStory?storyId=${item.id}"
+                           onclick="return confirm('Are you sure you want to delete this story?');">
+                            Delete
+                        </a>
+                    </td>
                 </tr>
             </c:forEach>
             </tbody>
